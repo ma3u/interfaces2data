@@ -193,15 +193,14 @@ html, body {
   background: var(--color-primary-dark);
 }
 
-/* Scroll indicator for overflowing content */
-.reveal .slides section::after {
-  content: '';
+/* Scroll Indicators */
+.scroll-indicator {
   position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background: var(--color-primary);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(119, 124, 124, 0.7);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -209,17 +208,69 @@ html, body {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: 100;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.reveal .slides section.has-overflow::after {
-  opacity: 0.7;
-  animation: bounce 2s infinite;
+.scroll-indicator.visible {
+  opacity: 1;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.scroll-indicator-down {
+  bottom: 120px;
+  animation: bounceDown 2s infinite ease-in-out;
+}
+
+.scroll-indicator-up {
+  top: 80px;
+  animation: bounceUp 2s infinite ease-in-out;
+}
+
+.scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes bounceDown {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+@keyframes bounceUp {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-indicator svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scroll-indicator-down {
+    bottom: 80px;
+  }
+
+  .scroll-indicator-up {
+    top: 60px;
+  }
 }
 
 .reveal h1,

@@ -80,6 +80,61 @@ deck.initialize().then(() => {
   // Initial update
   updateSlideCounter();
 
+  // Create scroll indicators
+  const scrollIndicatorDown = document.createElement('div');
+  scrollIndicatorDown.className = 'scroll-indicator scroll-indicator-down';
+  scrollIndicatorDown.innerHTML = `
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 10l5 5 5-5z"/>
+    </svg>
+  `;
+  document.body.appendChild(scrollIndicatorDown);
+
+  const scrollIndicatorUp = document.createElement('div');
+  scrollIndicatorUp.className = 'scroll-indicator scroll-indicator-up';
+  scrollIndicatorUp.innerHTML = `
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 14l5-5 5 5z"/>
+    </svg>
+  `;
+  document.body.appendChild(scrollIndicatorUp);
+
+  // Function to update scroll indicators
+  function updateScrollIndicators() {
+    const activeSlide = document.querySelector('.reveal .slides section.present') as HTMLElement;
+    if (!activeSlide) return;
+
+    const scrollTop = activeSlide.scrollTop;
+    const scrollHeight = activeSlide.scrollHeight;
+    const clientHeight = activeSlide.clientHeight;
+    const scrollBottom = scrollHeight - scrollTop - clientHeight;
+
+    // Show down arrow if there's content below (with 20px threshold)
+    if (scrollBottom > 20) {
+      scrollIndicatorDown.classList.add('visible');
+    } else {
+      scrollIndicatorDown.classList.remove('visible');
+    }
+
+    // Show up arrow if there's content above (with 20px threshold)
+    if (scrollTop > 20) {
+      scrollIndicatorUp.classList.add('visible');
+    } else {
+      scrollIndicatorUp.classList.remove('visible');
+    }
+  }
+
+  // Update indicators on scroll
+  document.addEventListener('scroll', updateScrollIndicators, true);
+
+  // Update on slide change
+  deck.on('slidechanged', () => {
+    setTimeout(updateScrollIndicators, 100);
+  });
+
+  // Initial update
+  setTimeout(updateScrollIndicators, 500);
+
   // Language detection and redirection
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const hasLanguagePreference = sessionStorage.getItem('languageSelected');
@@ -93,25 +148,10 @@ deck.initialize().then(() => {
 
   sessionStorage.setItem('languageSelected', 'true');
 
-  // Add scroll indicators for overflowing content
-  function checkOverflow() {
-    const sections = document.querySelectorAll('.reveal .slides section');
-    sections.forEach((section) => {
-      const element = section as HTMLElement;
-      if (element.scrollHeight > element.clientHeight) {
-        element.classList.add('has-overflow');
-      } else {
-        element.classList.remove('has-overflow');
-      }
-    });
-  }
-
-  // Check overflow on slide change and resize
-  deck.on('slidechanged', checkOverflow);
-  window.addEventListener('resize', checkOverflow);
-
-  // Initial check
-  setTimeout(checkOverflow, 500);
+  // Update scroll indicators on window resize
+  window.addEventListener('resize', () => {
+    setTimeout(updateScrollIndicators, 100);
+  });
 
   // Custom keyboard handling for scrolling
   document.addEventListener('keydown', (event) => {
@@ -129,6 +169,9 @@ deck.initialize().then(() => {
         } else {
           activeSlide.scrollTop += 50;
         }
+
+        // Update scroll indicators after scrolling
+        setTimeout(updateScrollIndicators, 50);
       }
     }
   }, true);

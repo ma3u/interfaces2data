@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Data Paradox: Monetization vs. Protection</title>
+    <title>Das Daten-Paradoxon: Monetarisierung vs. Schutz</title>
     <style>
         :root {
   --color-white: rgba(255, 255, 255, 1);
@@ -467,38 +467,38 @@ tr:nth-child(even) {
     .presentation-container {
         padding: var(--space-16);
     }
-    
+
     .slide {
         padding: var(--space-24);
         min-height: auto;
     }
-    
+
     .slide-title {
         font-size: 24px;
     }
-    
+
     .title-slide .main-title {
         font-size: 32px;
     }
-    
+
     .two-column {
         grid-template-columns: 1fr;
         gap: var(--space-16);
     }
-    
+
     .architecture-diagram {
         flex-direction: column;
         gap: var(--space-16);
     }
-    
+
     .arch-arrow {
         transform: rotate(90deg);
     }
-    
+
     table {
         font-size: var(--font-size-sm);
     }
-    
+
     th, td {
         padding: var(--space-8);
     }
@@ -545,94 +545,94 @@ tr:nth-child(even) {
 </head>
 <body>
     <div class="language-switcher">
-        <a href="index.html"><strong>🇬🇧 English</strong></a> | <a href="index-de.html">🇩🇪 Deutsch</a>
+        <a href="index.html">🇬🇧 English</a> | <a href="index-de.html"><strong>🇩🇪 Deutsch</strong></a>
     </div>
 
     <div class="presentation-container">
-        <!-- Slide 1: The Central Business Challenge -->
+        <!-- Folie 1: Die zentrale geschäftliche Herausforderung -->
         <div class="slide active" data-slide="1">
             <div class="slide-header">
-                <h2 class="slide-title">The Data Paradox: Monetization vs. Protection</h2>
+                <h2 class="slide-title">Das Daten-Paradoxon: Monetarisierung vs. Schutz</h2>
             </div>
             <div class="slide-content">
                 <div style="background-color: var(--color-bg-1); padding: 32px; border-radius: var(--radius-lg); text-align: center; margin: 24px 0; border: 3px solid var(--color-primary);">
-                    <h3 style="font-size: 28px; color: var(--color-primary); margin-bottom: 16px; line-height: 1.4;">"How do we build profitable business models on data while protecting our intellectual property AND our customers' personal data?"</h3>
+                    <h3 style="font-size: 28px; color: var(--color-primary); margin-bottom: 16px; line-height: 1.4;">"Wie bauen wir profitable Geschäftsmodelle auf Daten auf und schützen gleichzeitig unser geistiges Eigentum UND die persönlichen Daten unserer Kunden?"</h3>
                 </div>
                 <div style="margin: 24px 0;">
-                    <h4 style="font-size: 18px; margin-bottom: 12px; color: var(--color-text);">Supporting Context:</h4>
+                    <h4 style="font-size: 18px; margin-bottom: 12px; color: var(--color-text);">Unterstützender Kontext:</h4>
                     <ul style="font-size: 16px; line-height: 1.8;">
-                        <li><strong>Data is the new infrastructure — foundational but also a fiduciary responsibility</strong></li>
-                        <li>Three competing forces:
+                        <li><strong>Daten sind die neue Infrastruktur — grundlegend, aber auch eine treuhänderische Verantwortung</strong></li>
+                        <li>Drei konkurrierende Kräfte:
                             <ul style="margin-top: 8px;">
-                                <li>Revenue generation (data monetization)</li>
-                                <li>IP protection (competitive advantage)</li>
-                                <li>Privacy compliance (GDPR, PDPL, data sovereignty)</li>
+                                <li>Umsatzgenerierung (Datenmonetarisierung)</li>
+                                <li>Schutz des geistigen Eigentums (Wettbewerbsvorteil)</li>
+                                <li>Datenschutz-Compliance (DSGVO, PDPL, Datensouveränität)</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
                 <div class="warning-card" style="margin-top: 24px;">
-                    <h4 style="font-size: 17px; font-weight: 600;">The Challenge:</h4>
-                    <p style="font-size: 15px; margin-top: 8px;">Traditional approaches solve ONE dimension. Modern data economy demands solving ALL THREE simultaneously.</p>
+                    <h4 style="font-size: 17px; font-weight: 600;">Die Herausforderung:</h4>
+                    <p style="font-size: 15px; margin-top: 8px;">Traditionelle Ansätze lösen EINE Dimension. Die moderne Datenwirtschaft erfordert die gleichzeitige Lösung ALLER DREI.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 2: Three Pathways to Data Access -->
+        <!-- Folie 2: Drei Wege zum Datenzugriff -->
         <div class="slide" data-slide="2">
             <div class="slide-header">
-                <h2 class="slide-title">Three Protocols, Three Philosophies</h2>
+                <h2 class="slide-title">Drei Protokolle, drei Philosophien</h2>
             </div>
             <div class="slide-content">
                 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 20px 0;">
                     <div class="column">
-                        <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 16px;">Traditional APIs</h3>
+                        <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 16px;">Traditionelle APIs</h3>
                         <ul style="font-size: 14px; list-style: none; margin: 0;">
-                            <li style="margin-bottom: 10px;"><strong>Philosophy:</strong> Point-to-point integration</li>
-                            <li style="margin-bottom: 10px;"><strong>Access:</strong> Developer-controlled, programmatic</li>
-                            <li style="margin-bottom: 10px;"><strong>Governance:</strong> API keys, rate limits, access control</li>
-                            <li style="margin-bottom: 10px;"><strong>Best For:</strong> B2B integrations, known use cases</li>
-                            <li style="margin-bottom: 10px;"><strong>IP/Privacy:</strong> Custom contracts per API</li>
+                            <li style="margin-bottom: 10px;"><strong>Philosophie:</strong> Punkt-zu-Punkt-Integration</li>
+                            <li style="margin-bottom: 10px;"><strong>Zugriff:</strong> Entwicklergesteuert, programmatisch</li>
+                            <li style="margin-bottom: 10px;"><strong>Verwaltung:</strong> API-Schlüssel, Ratenlimits, Zugangskontrolle</li>
+                            <li style="margin-bottom: 10px;"><strong>Am besten für:</strong> B2B-Integrationen, bekannte Anwendungsfälle</li>
+                            <li style="margin-bottom: 10px;"><strong>IP/Datenschutz:</strong> Individuelle Verträge pro API</li>
                         </ul>
                     </div>
                     <div class="column">
                         <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 16px;">DataSpace Protocol</h3>
                         <ul style="font-size: 14px; list-style: none; margin: 0;">
-                            <li style="margin-bottom: 10px;"><strong>Philosophy:</strong> Federated data sovereignty</li>
-                            <li style="margin-bottom: 10px;"><strong>Access:</strong> Contract-first, automated negotiation</li>
-                            <li style="margin-bottom: 10px;"><strong>Governance:</strong> ODRL policies, usage control</li>
-                            <li style="margin-bottom: 10px;"><strong>Best For:</strong> Inter-organizational data exchange</li>
-                            <li style="margin-bottom: 10px;"><strong>IP/Privacy:</strong> ODRL contracts + technical enforcement</li>
+                            <li style="margin-bottom: 10px;"><strong>Philosophie:</strong> Föderierte Datensouveränität</li>
+                            <li style="margin-bottom: 10px;"><strong>Zugriff:</strong> Vertragsorientiert, automatisierte Verhandlung</li>
+                            <li style="margin-bottom: 10px;"><strong>Verwaltung:</strong> ODRL-Richtlinien, Nutzungskontrolle</li>
+                            <li style="margin-bottom: 10px;"><strong>Am besten für:</strong> Organisationsübergreifender Datenaustausch</li>
+                            <li style="margin-bottom: 10px;"><strong>IP/Datenschutz:</strong> ODRL-Verträge + technische Durchsetzung</li>
                         </ul>
                     </div>
                     <div class="column">
                         <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 16px;">MCP</h3>
                         <ul style="font-size: 14px; list-style: none; margin: 0;">
-                            <li style="margin-bottom: 10px;"><strong>Philosophy:</strong> Natural language, intent-driven</li>
-                            <li style="margin-bottom: 10px;"><strong>Access:</strong> Human → AI → Data</li>
-                            <li style="margin-bottom: 10px;"><strong>Governance:</strong> User consent, real-time approval</li>
-                            <li style="margin-bottom: 10px;"><strong>Best For:</strong> End-user data access, democratization</li>
-                            <li style="margin-bottom: 10px;"><strong>IP/Privacy:</strong> Host-level consent + OAuth 2.1</li>
+                            <li style="margin-bottom: 10px;"><strong>Philosophie:</strong> Natürliche Sprache, absichtsgesteuert</li>
+                            <li style="margin-bottom: 10px;"><strong>Zugriff:</strong> Mensch → KI → Daten</li>
+                            <li style="margin-bottom: 10px;"><strong>Verwaltung:</strong> Benutzerzustimmung, Echtzeit-Genehmigung</li>
+                            <li style="margin-bottom: 10px;"><strong>Am besten für:</strong> Endbenutzerdatenzugriff, Demokratisierung</li>
+                            <li style="margin-bottom: 10px;"><strong>IP/Datenschutz:</strong> Host-Zustimmung + OAuth 2.1</li>
                         </ul>
                     </div>
                 </div>
                 <div class="info-card" style="margin-top: 20px; text-align: center;">
-                    <p style="font-size: 16px; font-weight: 600;">Each protocol addresses different aspects of the data paradox</p>
+                    <p style="font-size: 16px; font-weight: 600;">Jedes Protokoll adressiert verschiedene Aspekte des Daten-Paradoxons</p>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 3: The Business Model Question -->
+        <!-- Folie 3: Die Geschäftsmodellfrage -->
         <div class="slide" data-slide="3">
             <div class="slide-header">
-                <h2 class="slide-title">Data Monetization Models &amp; Protocol Fit</h2>
+                <h2 class="slide-title">Datenmonetarisierungsmodelle &amp; Protokoll-Eignung</h2>
             </div>
             <div class="slide-content">
                 <table style="font-size: 14px;">
                     <thead>
                         <tr>
-                            <th>Business Model</th>
-                            <th>Traditional API</th>
+                            <th>Geschäftsmodell</th>
+                            <th>Traditionelle API</th>
                             <th>DataSpace</th>
                             <th>MCP</th>
                         </tr>
@@ -640,146 +640,146 @@ tr:nth-child(even) {
                     <tbody>
                         <tr>
                             <td><strong>Data-as-a-Service</strong></td>
-                            <td>✅ Primary</td>
-                            <td>✅ B2B focus</td>
-                            <td>⚠️ Limited</td>
+                            <td>✅ Primär</td>
+                            <td>✅ B2B-Fokus</td>
+                            <td>⚠️ Begrenzt</td>
                         </tr>
                         <tr>
-                            <td><strong>API Economy</strong></td>
-                            <td>✅ Direct</td>
-                            <td>➖ Via connector</td>
-                            <td>✅ Tool access</td>
+                            <td><strong>API-Wirtschaft</strong></td>
+                            <td>✅ Direkt</td>
+                            <td>➖ Via Connector</td>
+                            <td>✅ Tool-Zugriff</td>
                         </tr>
                         <tr>
-                            <td><strong>Data Sharing (B2B)</strong></td>
-                            <td>⚠️ Complex</td>
-                            <td>✅✅ Designed for</td>
-                            <td>➖ Not primary</td>
+                            <td><strong>Datenaustausch (B2B)</strong></td>
+                            <td>⚠️ Komplex</td>
+                            <td>✅✅ Entwickelt für</td>
+                            <td>➖ Nicht primär</td>
                         </tr>
                         <tr>
                             <td><strong>Analytics-as-a-Service</strong></td>
-                            <td>✅ Yes</td>
-                            <td>✅ Federated</td>
-                            <td>✅✅ Natural language</td>
+                            <td>✅ Ja</td>
+                            <td>✅ Föderiert</td>
+                            <td>✅✅ Natürliche Sprache</td>
                         </tr>
                         <tr>
-                            <td><strong>Data Marketplace</strong></td>
-                            <td>✅ Yes</td>
-                            <td>✅✅ Native support</td>
-                            <td>➖ Indirect</td>
+                            <td><strong>Datenmarktplatz</strong></td>
+                            <td>✅ Ja</td>
+                            <td>✅✅ Native Unterstützung</td>
+                            <td>➖ Indirekt</td>
                         </tr>
                         <tr>
-                            <td><strong>Internal Democratization</strong></td>
-                            <td>⚠️ Technical</td>
-                            <td>➖ Overkill</td>
+                            <td><strong>Interne Demokratisierung</strong></td>
+                            <td>⚠️ Technisch</td>
+                            <td>➖ Überdimensioniert</td>
                             <td>✅✅ Ideal</td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="info-card" style="margin-top: 20px;">
-                    <h3>Key Insight</h3>
-                    <p style="font-size: 15px;">No single protocol solves all monetization models. Architecture must match business strategy.</p>
+                    <h3>Wichtige Erkenntnis</h3>
+                    <p style="font-size: 15px;">Kein einzelnes Protokoll löst alle Monetarisierungsmodelle. Die Architektur muss zur Geschäftsstrategie passen.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 4: IP Protection -->
+        <!-- Folie 4: IP-Schutz -->
         <div class="slide" data-slide="4">
             <div class="slide-header">
-                <h2 class="slide-title">Intellectual Property Protection Mechanisms</h2>
+                <h2 class="slide-title">Schutzmechanismen für geistiges Eigentum</h2>
             </div>
             <div class="slide-content">
                 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 20px 0;">
                     <div class="column">
-                        <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 12px;">Traditional APIs</h3>
+                        <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 12px;">Traditionelle APIs</h3>
                         <ul style="font-size: 13px;">
-                            <li>Licensing agreements (per-API contracts)</li>
-                            <li>Trade secret protection via closed source</li>
-                            <li>Rate limiting to control value extraction</li>
-                            <li>Terms of Service enforcement</li>
-                            <li>Copyright on API structure (contested in US law)</li>
-                            <li><strong style="color: var(--color-error);">Risk:</strong> Fair use defense, difficult enforcement</li>
+                            <li>Lizenzvereinbarungen (pro API-Verträge)</li>
+                            <li>Geschäftsgeheimnisschutz via Closed Source</li>
+                            <li>Ratenlimits zur Kontrolle der Wertextraktion</li>
+                            <li>Durchsetzung der Nutzungsbedingungen</li>
+                            <li>Urheberrecht an API-Struktur (umstritten im US-Recht)</li>
+                            <li><strong style="color: var(--color-error);">Risiko:</strong> Fair-Use-Verteidigung, schwierige Durchsetzung</li>
                         </ul>
                     </div>
                     <div class="column">
                         <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 12px;">DataSpace Protocol</h3>
                         <ul style="font-size: 13px;">
-                            <li>ODRL usage policies (machine-readable contracts)</li>
-                            <li>Purpose limitation (data only for agreed use)</li>
-                            <li>Deletion policies (time-bound access)</li>
-                            <li>Connector-enforced usage control</li>
-                            <li>Audit trails for compliance verification</li>
-                            <li><strong style="color: var(--color-warning);">Risk:</strong> Requires trust in connector implementation</li>
+                            <li>ODRL-Nutzungsrichtlinien (maschinenlesbare Verträge)</li>
+                            <li>Zweckbindung (Daten nur für vereinbarte Nutzung)</li>
+                            <li>Löschrichtlinien (zeitgebundener Zugriff)</li>
+                            <li>Connector-durchgesetzte Nutzungskontrolle</li>
+                            <li>Audit-Trails für Compliance-Prüfung</li>
+                            <li><strong style="color: var(--color-warning);">Risiko:</strong> Erfordert Vertrauen in Connector-Implementierung</li>
                         </ul>
                     </div>
                     <div class="column">
                         <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 12px;">MCP</h3>
                         <ul style="font-size: 13px;">
-                            <li>Host-controlled access (gatekeeper model)</li>
-                            <li>Tool-level permissions (scope limiting)</li>
-                            <li>No native IP protection spec</li>
-                            <li>Relies on application-layer enforcement</li>
-                            <li>User consent as primary control</li>
-                            <li><strong style="color: var(--color-error);">Risk:</strong> Over-sharing via conversational interface</li>
+                            <li>Host-kontrollierter Zugriff (Gatekeeper-Modell)</li>
+                            <li>Tool-Level-Berechtigungen (Scope-Begrenzung)</li>
+                            <li>Keine native IP-Schutz-Spezifikation</li>
+                            <li>Verlässt sich auf Anwendungsebenen-Durchsetzung</li>
+                            <li>Benutzerzustimmung als primäre Kontrolle</li>
+                            <li><strong style="color: var(--color-error);">Risiko:</strong> Über-Sharing via Konversationsschnittstelle</li>
                         </ul>
                     </div>
                 </div>
                 <div class="warning-card" style="margin-top: 20px;">
-                    <p style="font-size: 15px; font-weight: 600;">Bottom Line: DataSpace offers strongest technical IP enforcement; MCP weakest (relies on trust).</p>
+                    <p style="font-size: 15px; font-weight: 600;">Fazit: DataSpace bietet die stärkste technische IP-Durchsetzung; MCP die schwächste (basiert auf Vertrauen).</p>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 5: Customer Data Privacy & Compliance -->
+        <!-- Folie 5: Kundendatenschutz & Compliance -->
         <div class="slide" data-slide="5">
             <div class="slide-header">
-                <h2 class="slide-title">Personal Data Protection: Regulatory Alignment</h2>
+                <h2 class="slide-title">Schutz personenbezogener Daten: Regulatorische Ausrichtung</h2>
             </div>
             <div class="slide-content">
                 <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
                     <div class="column">
-                        <h3>GDPR/Privacy Law Requirements</h3>
+                        <h3>DSGVO/Datenschutz-Anforderungen</h3>
                         <ul style="font-size: 13px;">
-                            <li>Lawful basis for processing</li>
-                            <li>Purpose limitation</li>
-                            <li>Data minimization</li>
-                            <li>Storage limitation</li>
-                            <li>Consent management</li>
-                            <li>Right to erasure</li>
-                            <li>Data breach notification (72hrs)</li>
-                            <li>Cross-border transfer restrictions</li>
+                            <li>Rechtliche Grundlage für Verarbeitung</li>
+                            <li>Zweckbindung</li>
+                            <li>Datenminimierung</li>
+                            <li>Speicherbegrenzung</li>
+                            <li>Einwilligungsverwaltung</li>
+                            <li>Recht auf Löschung</li>
+                            <li>Datenschutzverletzungsmeldung (72h)</li>
+                            <li>Grenzüberschreitende Übertragungsbeschränkungen</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 style="margin-bottom: 12px;">How Protocols Address This</h3>
+                        <h3 style="margin-bottom: 12px;">Wie Protokolle dies adressieren</h3>
                         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
                             <div style="background-color: var(--color-bg-1); padding: 12px; border-radius: var(--radius-base);">
                                 <h4 style="color: var(--color-primary); margin-bottom: 8px; font-size: 14px;">APIs</h4>
                                 <ul style="font-size: 12px; margin-left: 16px;">
-                                    <li>✅ Custom contracts per jurisdiction</li>
-                                    <li>✅ Developer-controlled data flows</li>
-                                    <li>⚠️ No standardized consent model</li>
-                                    <li>⚠️ Privacy by implementation, not design</li>
+                                    <li>✅ Individuelle Verträge pro Rechtsprechung</li>
+                                    <li>✅ Entwicklergesteuerte Datenflüsse</li>
+                                    <li>⚠️ Kein standardisiertes Einwilligungsmodell</li>
+                                    <li>⚠️ Datenschutz durch Implementierung, nicht Design</li>
                                 </ul>
                             </div>
                             <div style="background-color: var(--color-bg-3); padding: 12px; border-radius: var(--radius-base);">
                                 <h4 style="color: var(--color-success); margin-bottom: 8px; font-size: 14px;">DataSpace</h4>
                                 <ul style="font-size: 12px; margin-left: 16px;">
-                                    <li>✅✅ ODRL policies encode purpose/time limits</li>
-                                    <li>✅ Technical usage control enforcement</li>
-                                    <li>✅ Federated identity (data stays local)</li>
-                                    <li>✅ Audit trails for GDPR compliance</li>
-                                    <li>⚠️ Complex for consumer-facing scenarios</li>
+                                    <li>✅✅ ODRL-Richtlinien kodieren Zweck-/Zeitlimits</li>
+                                    <li>✅ Technische Nutzungskontroll-Durchsetzung</li>
+                                    <li>✅ Föderierte Identität (Daten bleiben lokal)</li>
+                                    <li>✅ Audit-Trails für DSGVO-Compliance</li>
+                                    <li>⚠️ Komplex für kundenorientierte Szenarien</li>
                                 </ul>
                             </div>
                             <div style="background-color: var(--color-bg-2); padding: 12px; border-radius: var(--radius-base);">
                                 <h4 style="color: var(--color-warning); margin-bottom: 8px; font-size: 14px;">MCP</h4>
                                 <ul style="font-size: 12px; margin-left: 16px;">
-                                    <li>✅ Real-time user consent (human-in-loop)</li>
-                                    <li>✅ OAuth 2.1 with PKCE (secure auth)</li>
-                                    <li>⚠️ No native data minimization enforcement</li>
-                                    <li>⚠️ Conversational = risk of over-disclosure</li>
-                                    <li>🔄 Verifiable Credentials coming (ToIP/DIF WG)</li>
+                                    <li>✅ Echtzeit-Benutzerzustimmung (Human-in-Loop)</li>
+                                    <li>✅ OAuth 2.1 mit PKCE (sichere Authentifizierung)</li>
+                                    <li>⚠️ Keine native Datenminimierungsdurchsetzung</li>
+                                    <li>⚠️ Konversationell = Risiko der Über-Offenlegung</li>
+                                    <li>🔄 Verifiable Credentials kommen (ToIP/DIF AG)</li>
                                 </ul>
                             </div>
                         </div>
@@ -788,351 +788,351 @@ tr:nth-child(even) {
             </div>
         </div>
 
-        <!-- Slide 6: Weather API Example -->
+        <!-- Folie 6: Wetter-API-Beispiel -->
         <div class="slide" data-slide="6">
             <div class="slide-header">
-                <h2 class="slide-title">Why Protocols Matter: Dynamic Data Access</h2>
+                <h2 class="slide-title">Warum Protokolle wichtig sind: Dynamischer Datenzugriff</h2>
             </div>
             <div class="slide-content">
                 <div class="info-card" style="margin-bottom: 16px;">
-                    <h3>The Scenario</h3>
-                    <p style="font-size: 16px; font-style: italic;">User asks: "What's the weather tomorrow in Vienna?"</p>
+                    <h3>Das Szenario</h3>
+                    <p style="font-size: 16px; font-style: italic;">Benutzer fragt: "Wie wird das Wetter morgen in Wien?"</p>
                 </div>
                 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 20px 0;">
                     <div style="background-color: var(--color-bg-4); padding: 16px; border-radius: var(--radius-base); border-left: 4px solid var(--color-error);">
-                        <h4 style="margin-bottom: 12px;">❌ Without Protocols</h4>
-                        <p style="font-size: 13px; margin-bottom: 8px;"><strong>LLM:</strong> "I cannot provide current weather (training cutoff limitation)"</p>
-                        <p style="font-size: 13px; font-weight: 600;">Result: No business value, frustrated user</p>
+                        <h4 style="margin-bottom: 12px;">❌ Ohne Protokolle</h4>
+                        <p style="font-size: 13px; margin-bottom: 8px;"><strong>LLM:</strong> "Ich kann keine aktuellen Wetterdaten bereitstellen (Trainingsdaten-Begrenzung)"</p>
+                        <p style="font-size: 13px; font-weight: 600;">Ergebnis: Kein geschäftlicher Wert, frustrierter Benutzer</p>
                     </div>
                     <div style="background-color: var(--color-bg-2); padding: 16px; border-radius: var(--radius-base); border-left: 4px solid var(--color-warning);">
-                        <h4 style="margin-bottom: 12px;">⚠️ Traditional Weather API</h4>
-                        <p style="font-size: 13px;">✅ Developer integrates API manually</p>
-                        <p style="font-size: 13px;">⚠️ Requires coding, API key management</p>
-                        <p style="font-size: 13px;">⚠️ <strong>IP:</strong> Enforced via API terms, rate limits</p>
-                        <p style="font-size: 13px;">⚠️ <strong>Privacy:</strong> Weather data (low risk), but location tracking concerns</p>
-                        <p style="font-size: 13px; font-weight: 600; margin-top: 8px;">Result: Works for developers, not end users</p>
+                        <h4 style="margin-bottom: 12px;">⚠️ Traditionelle Wetter-API</h4>
+                        <p style="font-size: 13px;">✅ Entwickler integriert API manuell</p>
+                        <p style="font-size: 13px;">⚠️ Erfordert Programmierung, API-Schlüsselverwaltung</p>
+                        <p style="font-size: 13px;">⚠️ <strong>IP:</strong> Durchgesetzt via API-Bedingungen, Ratenlimits</p>
+                        <p style="font-size: 13px;">⚠️ <strong>Datenschutz:</strong> Wetterdaten (geringes Risiko), aber Standort-Tracking-Bedenken</p>
+                        <p style="font-size: 13px; font-weight: 600; margin-top: 8px;">Ergebnis: Funktioniert für Entwickler, nicht Endbenutzer</p>
                     </div>
                     <div style="background-color: var(--color-bg-3); padding: 16px; border-radius: var(--radius-base); border-left: 4px solid var(--color-success);">
-                        <h4 style="margin-bottom: 12px;">✅ MCP + Weather Tool</h4>
-                        <p style="font-size: 13px;">✅ User: Natural language request</p>
-                        <p style="font-size: 13px;">✅ MCP Server: Calls weather API</p>
-                        <p style="font-size: 13px;">✅ Response: "Vienna (Oct 26): 12°C, patchy rain, 22% chance"</p>
-                        <p style="font-size: 13px;">⚠️ <strong>IP:</strong> Weather provider's API terms apply</p>
-                        <p style="font-size: 13px;">⚠️ <strong>Privacy:</strong> Location data shared with consent</p>
-                        <p style="font-size: 13px; font-weight: 600; margin-top: 8px;">Result: Democratized access, but relies on API backend</p>
+                        <h4 style="margin-bottom: 12px;">✅ MCP + Wetter-Tool</h4>
+                        <p style="font-size: 13px;">✅ Benutzer: Anfrage in natürlicher Sprache</p>
+                        <p style="font-size: 13px;">✅ MCP-Server: Ruft Wetter-API auf</p>
+                        <p style="font-size: 13px;">✅ Antwort: "Wien (26. Okt): 12°C, zeitweise Regen, 22% Wahrscheinlichkeit"</p>
+                        <p style="font-size: 13px;">⚠️ <strong>IP:</strong> Wetter-Anbieter API-Bedingungen gelten</p>
+                        <p style="font-size: 13px;">⚠️ <strong>Datenschutz:</strong> Standortdaten mit Zustimmung geteilt</p>
+                        <p style="font-size: 13px; font-weight: 600; margin-top: 8px;">Ergebnis: Demokratisierter Zugriff, aber abhängig von API-Backend</p>
                     </div>
                 </div>
                 <div class="success-card" style="margin-top: 20px;">
-                    <h3>Lesson</h3>
-                    <p style="font-size: 15px;">MCP is the interface layer; APIs/DataSpace are the infrastructure layer.</p>
+                    <h3>Lektion</h3>
+                    <p style="font-size: 15px;">MCP ist die Schnittstellenschicht; APIs/DataSpace sind die Infrastrukturschicht.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 7: The IP-Privacy Tension -->
+        <!-- Folie 7: Die IP-Datenschutz-Spannung -->
         <div class="slide" data-slide="7">
             <div class="slide-header">
-                <h2 class="slide-title">The Core Tension: Monetization vs. Protection</h2>
+                <h2 class="slide-title">Die Kernspannung: Monetarisierung vs. Schutz</h2>
             </div>
             <div class="slide-content">
                 <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin: 24px 0;">
                     <div style="background-color: var(--color-bg-1); padding: 20px; border-radius: var(--radius-lg); border: 2px solid var(--color-primary);">
-                        <h3 style="color: var(--color-primary); text-align: center; margin-bottom: 12px;">Maximize Data Value</h3>
+                        <h3 style="color: var(--color-primary); text-align: center; margin-bottom: 12px;">Datenwert maximieren</h3>
                         <ul style="font-size: 14px;">
-                            <li>Share data broadly</li>
-                            <li>Enable AI training on your data</li>
-                            <li>Open APIs for ecosystem growth</li>
-                            <li>Allow derived insights</li>
-                            <li>Cross-border data flows</li>
+                            <li>Daten breit teilen</li>
+                            <li>KI-Training auf Ihren Daten ermöglichen</li>
+                            <li>Offene APIs für Ökosystem-Wachstum</li>
+                            <li>Abgeleitete Erkenntnisse zulassen</li>
+                            <li>Grenzüberschreitende Datenflüsse</li>
                         </ul>
-                        <p style="font-size: 13px; margin-top: 12px; font-weight: 600; text-align: center;">Business Goal: Revenue, innovation, market expansion</p>
+                        <p style="font-size: 13px; margin-top: 12px; font-weight: 600; text-align: center;">Geschäftsziel: Umsatz, Innovation, Markterweiterung</p>
                     </div>
                     <div style="font-size: 48px; color: var(--color-text-secondary);">⚖️</div>
                     <div style="background-color: var(--color-bg-4); padding: 20px; border-radius: var(--radius-lg); border: 2px solid var(--color-error);">
-                        <h3 style="color: var(--color-error); text-align: center; margin-bottom: 12px;">Protect IP &amp; Privacy</h3>
+                        <h3 style="color: var(--color-error); text-align: center; margin-bottom: 12px;">IP &amp; Datenschutz schützen</h3>
                         <ul style="font-size: 14px;">
-                            <li>Restrict data access</li>
-                            <li>Prevent unauthorized use</li>
-                            <li>Control derivative works</li>
-                            <li>Limit purpose and duration</li>
-                            <li>Data localization requirements</li>
+                            <li>Datenzugriff einschränken</li>
+                            <li>Unbefugte Nutzung verhindern</li>
+                            <li>Abgeleitete Werke kontrollieren</li>
+                            <li>Zweck und Dauer begrenzen</li>
+                            <li>Datenlokalisierungsanforderungen</li>
                         </ul>
-                        <p style="font-size: 13px; margin-top: 12px; font-weight: 600; text-align: center;">Legal Goal: Compliance, competitive advantage, customer trust</p>
+                        <p style="font-size: 13px; margin-top: 12px; font-weight: 600; text-align: center;">Rechtliches Ziel: Compliance, Wettbewerbsvorteil, Kundenvertrauen</p>
                     </div>
                 </div>
                 <div class="info-card">
-                    <h3 style="text-align: center; margin-bottom: 12px;">Protocol Solutions</h3>
+                    <h3 style="text-align: center; margin-bottom: 12px;">Protokoll-Lösungen</h3>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; font-size: 14px;">
-                        <div><strong>APIs:</strong> Contracts + technical controls (partial)</div>
-                        <div><strong>DataSpace:</strong> ODRL + usage control (strongest for B2B)</div>
-                        <div><strong>MCP:</strong> User consent + OAuth (strongest for B2C)</div>
+                        <div><strong>APIs:</strong> Verträge + technische Kontrollen (teilweise)</div>
+                        <div><strong>DataSpace:</strong> ODRL + Nutzungskontrolle (am stärksten für B2B)</div>
+                        <div><strong>MCP:</strong> Benutzerzustimmung + OAuth (am stärksten für B2C)</div>
                     </div>
                 </div>
                 <div class="success-card" style="margin-top: 16px;">
-                    <p style="font-size: 15px;"><strong>Emerging Solution:</strong> Federated learning, data trusts, verifiable credentials (combine value + protection)</p>
+                    <p style="font-size: 15px;"><strong>Aufkommende Lösung:</strong> Föderiertes Lernen, Data Trusts, verifiable Credentials (kombinieren Wert + Schutz)</p>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 8: DataSpace Protocol - The B2B Solution -->
+        <!-- Folie 8: DataSpace Protocol - Die B2B-Lösung -->
         <div class="slide" data-slide="8">
             <div class="slide-header">
-                <h2 class="slide-title">DataSpace Protocol: Built for IP Protection &amp; Data Sovereignty</h2>
+                <h2 class="slide-title">DataSpace Protocol: Entwickelt für IP-Schutz &amp; Datensouveränität</h2>
             </div>
             <div class="slide-content">
                 <div class="architecture-diagram" style="margin: 16px 0;">
                     <div class="arch-box">Org A<br/>(Connector)</div>
                     <div class="arch-arrow">↔</div>
-                    <div class="arch-box">Contract<br/>Negotiation</div>
+                    <div class="arch-box">Vertrags<br/>verhandlung</div>
                     <div class="arch-arrow">↔</div>
                     <div class="arch-box">Org B<br/>(Connector)</div>
                     <div class="arch-arrow">↔</div>
-                    <div class="arch-box">Data<br/>Transfer</div>
+                    <div class="arch-box">Daten<br/>übertragung</div>
                 </div>
                 <div class="two-column" style="margin: 20px 0;">
                     <div class="column">
-                        <h3>Key Components</h3>
+                        <h3>Hauptkomponenten</h3>
                         <ul style="font-size: 14px;">
-                            <li><strong>Catalog Protocol (DCAT):</strong> Describe available datasets, metadata</li>
-                            <li><strong>Contract Negotiation:</strong> Automated ODRL policy exchange</li>
-                            <li><strong>Transfer Protocol:</strong> Secure data exchange post-agreement</li>
-                            <li><strong>Usage Control:</strong> Technical enforcement at connector level</li>
+                            <li><strong>Katalog-Protokoll (DCAT):</strong> Verfügbare Datensätze beschreiben, Metadaten</li>
+                            <li><strong>Vertragsverhandlung:</strong> Automatisierter ODRL-Richtlinienaustausch</li>
+                            <li><strong>Übertragungsprotokoll:</strong> Sicherer Datenaustausch nach Vereinbarung</li>
+                            <li><strong>Nutzungskontrolle:</strong> Technische Durchsetzung auf Connector-Ebene</li>
                         </ul>
                     </div>
                     <div class="column">
-                        <h3>IP Protection Features</h3>
+                        <h3>IP-Schutz-Funktionen</h3>
                         <ul style="font-size: 14px;">
-                            <li>21 ODRL policy classes (purpose, time, location, deletion)</li>
-                            <li>Contract terms are machine-readable and enforceable</li>
-                            <li>Audit logs for compliance verification</li>
-                            <li>Data doesn't move without agreement</li>
+                            <li>21 ODRL-Richtlinienklassen (Zweck, Zeit, Ort, Löschung)</li>
+                            <li>Vertragsbedingungen sind maschinenlesbar und durchsetzbar</li>
+                            <li>Audit-Protokolle für Compliance-Überprüfung</li>
+                            <li>Daten bewegen sich nicht ohne Vereinbarung</li>
                         </ul>
                     </div>
                 </div>
                 <div class="two-column" style="margin: 20px 0;">
                     <div class="column">
-                        <h3>Privacy Features</h3>
+                        <h3>Datenschutz-Funktionen</h3>
                         <ul style="font-size: 14px;">
-                            <li>Federated architecture (data sovereignty)</li>
-                            <li>DCP (Decentralized Claims Protocol) for identity</li>
-                            <li>OpenID4VC integration path (verifiable credentials)</li>
-                            <li>GDPR-compliant by design</li>
+                            <li>Föderierte Architektur (Datensouveränität)</li>
+                            <li>DCP (Decentralized Claims Protocol) für Identität</li>
+                            <li>OpenID4VC-Integrationspfad (verifiable Credentials)</li>
+                            <li>DSGVO-konform by Design</li>
                         </ul>
                     </div>
                     <div class="column">
-                        <h3>Use Cases</h3>
+                        <h3>Anwendungsfälle</h3>
                         <ul style="font-size: 14px;">
-                            <li>Mobility DataSpace</li>
-                            <li>Catena-X (automotive)</li>
-                            <li>Energy data exchange</li>
+                            <li>Mobilitäts-DataSpace</li>
+                            <li>Catena-X (Automobil)</li>
+                            <li>Energiedatenaustausch</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 9: MCP - The User-Facing Solution -->
+        <!-- Folie 9: MCP - Die benutzerorientierte Lösung -->
         <div class="slide" data-slide="9">
             <div class="slide-header">
-                <h2 class="slide-title">MCP: Natural Language Access with Real-Time Consent</h2>
+                <h2 class="slide-title">MCP: Zugriff in natürlicher Sprache mit Echtzeit-Zustimmung</h2>
             </div>
             <div class="slide-content">
                 <div class="architecture-diagram" style="margin: 16px 0;">
-                    <div class="arch-box">User</div>
+                    <div class="arch-box">Benutzer</div>
                     <div class="arch-arrow">→</div>
                     <div class="arch-box">MCP Client<br/>(LLM)</div>
                     <div class="arch-arrow">→</div>
-                    <div class="arch-box">MCP Server<br/>(Tools/Resources)</div>
+                    <div class="arch-box">MCP Server<br/>(Tools/Ressourcen)</div>
                     <div class="arch-arrow">→</div>
-                    <div class="arch-box">Backend<br/>APIs/Data</div>
+                    <div class="arch-box">Backend<br/>APIs/Daten</div>
                 </div>
-                <p style="text-align: center; font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px;"><strong>Current Spec:</strong> 2025-06-18 (Next RC: Nov 25, 2025)</p>
+                <p style="text-align: center; font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px;"><strong>Aktuelle Spezifikation:</strong> 2025-06-18 (Nächster RC: 25. Nov 2025)</p>
                 <div class="two-column">
                     <div class="column">
-                        <h3>Business Value</h3>
+                        <h3>Geschäftlicher Wert</h3>
                         <ul style="font-size: 14px;">
-                            <li>Democratize data access (no SQL/coding required)</li>
-                            <li>Natural language queries: "Show me Q3 revenue by region"</li>
-                            <li>Real-time decision-making</li>
-                            <li>Reduced training costs (intuitive interface)</li>
+                            <li>Demokratisierung des Datenzugriffs (keine SQL/Programmierung erforderlich)</li>
+                            <li>Abfragen in natürlicher Sprache: "Zeige Q3-Umsatz nach Region"</li>
+                            <li>Entscheidungsfindung in Echtzeit</li>
+                            <li>Reduzierte Schulungskosten (intuitive Schnittstelle)</li>
                         </ul>
                     </div>
                     <div class="column">
-                        <h3>IP Considerations</h3>
+                        <h3>IP-Überlegungen</h3>
                         <ul style="font-size: 14px;">
-                            <li>⚠️ No native IP protection specification</li>
-                            <li>⚠️ Tool descriptions visible to LLM (metadata leakage risk)</li>
-                            <li>✅ Host-controlled access (gatekeeper model)</li>
-                            <li>✅ Scope-limited tools (minimize exposure)</li>
+                            <li>⚠️ Keine native IP-Schutz-Spezifikation</li>
+                            <li>⚠️ Tool-Beschreibungen für LLM sichtbar (Metadaten-Leckage-Risiko)</li>
+                            <li>✅ Host-kontrollierter Zugriff (Gatekeeper-Modell)</li>
+                            <li>✅ Scope-begrenzte Tools (Exposition minimieren)</li>
                         </ul>
                     </div>
                 </div>
                 <div class="two-column" style="margin-top: 16px;">
                     <div class="column">
-                        <h3>Privacy Features</h3>
+                        <h3>Datenschutz-Funktionen</h3>
                         <ul style="font-size: 14px;">
-                            <li>✅ OAuth 2.1 with external auth servers (Auth0, Keycloak, Logto)</li>
-                            <li>✅ User consent required per interaction</li>
-                            <li>✅ PKCE mandatory (prevents token theft)</li>
-                            <li>⚠️ Microsoft Entra ID: Partial support (no DCR)</li>
-                            <li>🔄 Future: Verifiable Credentials (ToIP/DIF working group, Sep 2025)</li>
+                            <li>✅ OAuth 2.1 mit externen Auth-Servern (Auth0, Keycloak, Logto)</li>
+                            <li>✅ Benutzerzustimmung pro Interaktion erforderlich</li>
+                            <li>✅ PKCE verpflichtend (verhindert Token-Diebstahl)</li>
+                            <li>⚠️ Microsoft Entra ID: Teilweise Unterstützung (kein DCR)</li>
+                            <li>🔄 Zukunft: Verifiable Credentials (ToIP/DIF Arbeitsgruppe, Sep 2025)</li>
                         </ul>
                     </div>
                     <div class="column">
-                        <h3>Security Challenges</h3>
+                        <h3>Sicherheitsherausforderungen</h3>
                         <ul style="font-size: 14px;">
-                            <li>Prompt injection (OWASP #1 LLM risk)</li>
-                            <li>Tool poisoning, RCE vulnerabilities</li>
-                            <li>Cloud Security Alliance (CSA) working on MCP Security standards</li>
+                            <li>Prompt Injection (OWASP #1 LLM-Risiko)</li>
+                            <li>Tool-Vergiftung, RCE-Schwachstellen</li>
+                            <li>Cloud Security Alliance (CSA) arbeitet an MCP-Sicherheitsstandards</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 10: Can We Combine These Protocols? -->
+        <!-- Folie 10: Können wir diese Protokolle kombinieren? -->
         <div class="slide" data-slide="10">
             <div class="slide-header">
-                <h2 class="slide-title">Integration Strategy: Layered Architecture</h2>
+                <h2 class="slide-title">Integrationsstrategie: Geschichtete Architektur</h2>
             </div>
             <div class="slide-content">
                 <div class="success-card" style="margin-bottom: 16px;">
-                    <h3>✅ YES - Complementary Integration</h3>
+                    <h3>✅ JA - Komplementäre Integration</h3>
                 </div>
                 <div class="flow-diagram" style="font-size: 13px; line-height: 2;">
-                    End User<br/>
-                    ↓ (Natural Language)<br/>
+                    Endbenutzer<br/>
+                    ↓ (Natürliche Sprache)<br/>
                     MCP Client (Claude, Copilot)<br/>
                     ↓ (JSON-RPC)<br/>
-                    MCP Server (Tool Layer)<br/>
-                    ↓ (OAuth 2.1 / API calls)<br/>
-                    DataSpace Connector OR Traditional APIs<br/>
-                    ↓ (ODRL contracts / API terms)<br/>
-                    Data Sources (with IP &amp; privacy protection)
+                    MCP Server (Tool-Schicht)<br/>
+                    ↓ (OAuth 2.1 / API-Aufrufe)<br/>
+                    DataSpace Connector ODER Traditionelle APIs<br/>
+                    ↓ (ODRL-Verträge / API-Bedingungen)<br/>
+                    Datenquellen (mit IP- & Datenschutz)
                 </div>
                 <div class="two-column" style="margin-top: 20px;">
                     <div class="column">
-                        <h3>Benefits</h3>
+                        <h3>Vorteile</h3>
                         <ul style="font-size: 14px;">
-                            <li>✅ Best of both worlds: Natural language UX + Strong governance</li>
-                            <li>✅ Democratized access to compliant data spaces</li>
-                            <li>✅ Example: "Show me available datasets in mobility dataspace"</li>
-                            <li>✅ User-friendly contract exploration</li>
+                            <li>✅ Das Beste aus beiden Welten: Natürliche Sprach-UX + Starke Governance</li>
+                            <li>✅ Demokratisierter Zugriff auf konforme DataSpaces</li>
+                            <li>✅ Beispiel: "Zeige verfügbare Datensätze im Mobilitäts-DataSpace"</li>
+                            <li>✅ Benutzerfreundliche Vertragserkundung</li>
                         </ul>
                     </div>
                     <div class="column">
-                        <h3>Challenges</h3>
+                        <h3>Herausforderungen</h3>
                         <ul style="font-size: 14px;">
-                            <li>⚠️ Authentication bridge (OAuth 2.1 ↔ DCP/OpenID4VC)</li>
-                            <li>⚠️ Policy translation (user consent ↔ ODRL contracts)</li>
-                            <li>⚠️ Liability: Who approves contracts? User or system?</li>
-                            <li>⚠️ Different trust models (human vs. machine)</li>
+                            <li>⚠️ Authentifizierungsbrücke (OAuth 2.1 ↔ DCP/OpenID4VC)</li>
+                            <li>⚠️ Richtlinienübersetzung (Benutzerzustimmung ↔ ODRL-Verträge)</li>
+                            <li>⚠️ Haftung: Wer genehmigt Verträge? Benutzer oder System?</li>
+                            <li>⚠️ Unterschiedliche Vertrauensmodelle (Mensch vs. Maschine)</li>
                         </ul>
                     </div>
                 </div>
                 <div class="info-card" style="margin-top: 16px;">
-                    <p style="font-size: 15px; font-weight: 600;">Recommendation: Use MCP for discovery/exploration; DataSpace for actual data transfer</p>
+                    <p style="font-size: 15px; font-weight: 600;">Empfehlung: MCP für Entdeckung/Erkundung verwenden; DataSpace für tatsächliche Datenübertragung</p>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 11: Emerging Trends & Future Solutions -->
+        <!-- Folie 11: Aufkommende Trends & zukünftige Lösungen -->
         <div class="slide" data-slide="11">
             <div class="slide-header">
-                <h2 class="slide-title">The Future: Verifiable Credentials &amp; Federated Learning</h2>
+                <h2 class="slide-title">Die Zukunft: Verifiable Credentials &amp; Föderiertes Lernen</h2>
             </div>
             <div class="slide-content">
-                <h3 style="margin-bottom: 16px;">Active Developments</h3>
+                <h3 style="margin-bottom: 16px;">Aktive Entwicklungen</h3>
                 <div class="info-card">
-                    <h4>1. Verifiable Credentials for MCP</h4>
+                    <h4>1. Verifiable Credentials für MCP</h4>
                     <ul style="font-size: 14px;">
-                        <li>ToIP/DIF working group (launched Sep 2025)</li>
-                        <li>IETF draft: OAuth DCR + Trusted Issuer Tokens</li>
-                        <li>Goal: Cryptographically provable agent identity</li>
-                        <li>Bridges MCP ↔ DataSpace trust models</li>
+                        <li>ToIP/DIF-Arbeitsgruppe (gestartet Sep 2025)</li>
+                        <li>IETF-Entwurf: OAuth DCR + Trusted Issuer Tokens</li>
+                        <li>Ziel: Kryptografisch nachweisbare Agenten-Identität</li>
+                        <li>Überbrückt MCP ↔ DataSpace-Vertrauensmodelle</li>
                     </ul>
                 </div>
                 <div class="info-card">
-                    <h4>2. Federated Learning / Data Trusts</h4>
+                    <h4>2. Föderiertes Lernen / Data Trusts</h4>
                     <ul style="font-size: 14px;">
-                        <li>Train AI models without centralizing data</li>
-                        <li>Example: Boehringer Ingelheim (genomic research)</li>
-                        <li>Maintains IP + privacy while enabling collaboration</li>
-                        <li>Supported by DataSpace federated architecture</li>
+                        <li>KI-Modelle trainieren ohne Datenzentralisierung</li>
+                        <li>Beispiel: Boehringer Ingelheim (Genomforschung)</li>
+                        <li>Erhält IP + Datenschutz bei Ermöglichung der Zusammenarbeit</li>
+                        <li>Unterstützt durch föderierte DataSpace-Architektur</li>
                     </ul>
                 </div>
                 <div class="two-column" style="margin-top: 16px;">
                     <div class="column">
-                        <h4>3. MCP Security Standardization</h4>
+                        <h4>3. MCP-Sicherheits-Standardisierung</h4>
                         <ul style="font-size: 13px;">
                             <li>Cloud Security Alliance: modelcontextprotocol-security.io</li>
-                            <li>OWASP LLM Top 10 integration</li>
-                            <li>Focus: Prompt injection, tool poisoning, RCE prevention</li>
+                            <li>OWASP LLM Top 10 Integration</li>
+                            <li>Fokus: Prompt Injection, Tool-Vergiftung, RCE-Prävention</li>
                         </ul>
                     </div>
                     <div class="column">
-                        <h4>4. DataSpace ISO Standardization</h4>
+                        <h4>4. DataSpace ISO-Standardisierung</h4>
                         <ul style="font-size: 13px;">
-                            <li>Eclipse/IDSA moving toward international standard</li>
-                            <li>Broader adoption beyond Europe</li>
+                            <li>Eclipse/IDSA bewegt sich in Richtung internationaler Standard</li>
+                            <li>Breitere Akzeptanz außerhalb Europas</li>
                         </ul>
-                        <h4 style="margin-top: 12px;">5. Natural Language Contracts</h4>
+                        <h4 style="margin-top: 12px;">5. Natürlichsprachliche Verträge</h4>
                         <ul style="font-size: 13px;">
-                            <li>ODRL → Human-readable translation</li>
-                            <li>MCP interfaces for contract negotiation</li>
+                            <li>ODRL → Menschenlesbare Übersetzung</li>
+                            <li>MCP-Schnittstellen für Vertragsverhandlung</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 12: Recommendations -->
+        <!-- Folie 12: Empfehlungen -->
         <div class="slide" data-slide="12">
             <div class="slide-header">
-                <h2 class="slide-title">Strategic Recommendations for Data-Driven Organizations</h2>
+                <h2 class="slide-title">Strategische Empfehlungen für datengetriebene Organisationen</h2>
             </div>
             <div class="slide-content">
                 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 20px;">
                     <div class="column">
-                        <h3>For Monetization</h3>
+                        <h3>Für Monetarisierung</h3>
                         <ul style="font-size: 13px;">
-                            <li><strong>API Economy:</strong> Use traditional APIs for developer ecosystems</li>
-                            <li><strong>B2B Data Sharing:</strong> Adopt DataSpace Protocol for IP-protected exchange</li>
-                            <li><strong>Internal Democratization:</strong> Deploy MCP for natural language access</li>
-                            <li><strong>Hybrid Model:</strong> MCP front-end → DataSpace/API backend</li>
+                            <li><strong>API-Wirtschaft:</strong> Traditionelle APIs für Entwickler-Ökosysteme nutzen</li>
+                            <li><strong>B2B-Datenaustausch:</strong> DataSpace Protocol für IP-geschützten Austausch einsetzen</li>
+                            <li><strong>Interne Demokratisierung:</strong> MCP für Zugriff in natürlicher Sprache bereitstellen</li>
+                            <li><strong>Hybrid-Modell:</strong> MCP-Frontend → DataSpace/API-Backend</li>
                         </ul>
                     </div>
                     <div class="column">
-                        <h3>For IP Protection</h3>
+                        <h3>Für IP-Schutz</h3>
                         <ul style="font-size: 13px;">
-                            <li><strong>B2B Scenarios:</strong> Use ODRL policies + DataSpace connectors (technical enforcement)</li>
-                            <li><strong>API Licensing:</strong> Draft clear usage restrictions, rate limits, audit rights</li>
-                            <li><strong>MCP Tools:</strong> Minimize metadata exposure, scope tools narrowly</li>
-                            <li><strong>Monitor Emerging Standards:</strong> VC-based authentication, CSA security guidelines</li>
+                            <li><strong>B2B-Szenarien:</strong> ODRL-Richtlinien + DataSpace-Connectoren nutzen (technische Durchsetzung)</li>
+                            <li><strong>API-Lizenzierung:</strong> Klare Nutzungsbeschränkungen, Ratenlimits, Audit-Rechte entwerfen</li>
+                            <li><strong>MCP-Tools:</strong> Metadaten-Exposition minimieren, Tools eng begrenzen</li>
+                            <li><strong>Aufkommende Standards überwachen:</strong> VC-basierte Authentifizierung, CSA-Sicherheitsrichtlinien</li>
                         </ul>
                     </div>
                     <div class="column">
-                        <h3>For Privacy Compliance</h3>
+                        <h3>Für Datenschutz-Compliance</h3>
                         <ul style="font-size: 13px;">
-                            <li><strong>GDPR/Data Sovereignty:</strong> Prefer DataSpace (federated architecture, local processing)</li>
-                            <li><strong>Consumer-Facing:</strong> Use MCP with OAuth 2.1 + real-time consent</li>
-                            <li><strong>Cross-Border:</strong> Implement data localization where required</li>
-                            <li><strong>Audit Trails:</strong> Ensure all protocols log access for compliance reporting</li>
+                            <li><strong>DSGVO/Datensouveränität:</strong> DataSpace bevorzugen (föderierte Architektur, lokale Verarbeitung)</li>
+                            <li><strong>Kundenorientiert:</strong> MCP mit OAuth 2.1 + Echtzeit-Zustimmung verwenden</li>
+                            <li><strong>Grenzüberschreitend:</strong> Datenlokalisierung wo erforderlich implementieren</li>
+                            <li><strong>Audit-Trails:</strong> Sicherstellen, dass alle Protokolle Zugriff für Compliance-Berichte protokollieren</li>
                         </ul>
                     </div>
                 </div>
                 <div style="background-color: var(--color-bg-1); padding: 24px; border-radius: var(--radius-lg); border: 3px solid var(--color-primary); margin: 20px 0;">
-                    <h3 style="color: var(--color-primary); margin-bottom: 12px; font-size: 18px;">The Answer to Our Opening Question:</h3>
-                    <p style="font-size: 16px; line-height: 1.6;">"Build profitable business models on data while protecting IP and customer privacy by using <strong>layered protocols</strong>: MCP for user experience, DataSpace/APIs for governance, and emerging VC/federated learning for trust."</p>
+                    <h3 style="color: var(--color-primary); margin-bottom: 12px; font-size: 18px;">Die Antwort auf unsere Eingangsfrage:</h3>
+                    <p style="font-size: 16px; line-height: 1.6;">"Profitable Geschäftsmodelle auf Daten aufbauen und gleichzeitig IP und Kundendatenschutz schützen durch Nutzung <strong>geschichteter Protokolle</strong>: MCP für Benutzererfahrung, DataSpace/APIs für Governance und aufkommende VC/föderiertes Lernen für Vertrauen."</p>
                 </div>
                 <div class="success-card">
-                    <h3>Next Steps</h3>
+                    <h3>Nächste Schritte</h3>
                     <ul style="font-size: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                        <li>Assess your data monetization strategy</li>
-                        <li>Map business models to protocol capabilities</li>
-                        <li>Pilot MCP for internal use cases</li>
-                        <li>Evaluate DataSpace for B2B partnerships</li>
-                        <li>Monitor VC integration developments</li>
+                        <li>Datenmonetarisierungsstrategie bewerten</li>
+                        <li>Geschäftsmodelle auf Protokoll-Fähigkeiten abbilden</li>
+                        <li>MCP für interne Anwendungsfälle pilotieren</li>
+                        <li>DataSpace für B2B-Partnerschaften evaluieren</li>
+                        <li>VC-Integrationsentwicklungen überwachen</li>
                     </ul>
                 </div>
             </div>
@@ -1140,11 +1140,11 @@ tr:nth-child(even) {
 
         <!-- Navigation -->
         <div class="navigation">
-            <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">← Zurück</button>
             <span class="slide-counter">
-                <span id="currentSlide">1</span> / <span id="totalSlides">20</span>
+                <span id="currentSlide">1</span> / <span id="totalSlides">12</span>
             </span>
-            <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+            <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Weiter →</button>
         </div>
     </div>
 
@@ -1154,7 +1154,7 @@ tr:nth-child(even) {
 
         function showSlide(n) {
             const slides = document.querySelectorAll('.slide');
-            
+
             if (n > totalSlides) {
                 currentSlide = totalSlides;
             } else if (n < 1) {
@@ -1195,26 +1195,6 @@ tr:nth-child(even) {
 
         // Initialize
         showSlide(1);
-
-        // Language detection - redirect to German if browser language is German
-        // Only run on first visit to index.html (not if user explicitly chose English)
-        (function() {
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const hasLanguagePreference = sessionStorage.getItem('languageSelected');
-
-            // Only auto-redirect if on index.html and user hasn't made a choice yet
-            if (currentPage === 'index.html' && !hasLanguagePreference) {
-                const userLang = navigator.language || navigator.userLanguage;
-
-                // Check if browser language is German (de, de-DE, de-AT, de-CH, etc.)
-                if (userLang && userLang.toLowerCase().startsWith('de')) {
-                    window.location.href = 'index-de.html';
-                }
-            }
-
-            // Mark that user has visited (either they chose English or were auto-redirected)
-            sessionStorage.setItem('languageSelected', 'true');
-        })();
     </script>
 </body>
 </html>

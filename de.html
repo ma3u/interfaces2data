@@ -113,7 +113,280 @@
                 </div>
             </section>
 
-            <!-- Folie 4: Geschichtete Architektur -->
+            <!-- Folie 4: IP-Schutz -->
+            <section>
+                <div class="slide-content">
+                    <h2>Schutzmechanismen für geistiges Eigentum</h2>
+                    <div class="grid grid-3">
+                        <div class="card">
+                            <h3>Traditionelle APIs</h3>
+                            <ul>
+                                <li>Lizenzvereinbarungen (pro API-Verträge)</li>
+                                <li>Geschäftsgeheimnisschutz via Closed Source</li>
+                                <li>Ratenlimits zur Kontrolle der Wertextraktion</li>
+                                <li>Durchsetzung der Nutzungsbedingungen</li>
+                                <li>Urheberrecht an API-Struktur (umstritten im US-Recht)</li>
+                                <li><strong style="color: var(--color-accent);">Risiko:</strong> Fair-Use-Verteidigung, schwierige Durchsetzung</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>DataSpace Protocol</h3>
+                            <ul>
+                                <li>ODRL-Nutzungsrichtlinien (maschinenlesbare Verträge)</li>
+                                <li>Zweckbindung (Daten nur für vereinbarte Nutzung)</li>
+                                <li>Löschrichtlinien (zeitgebundener Zugriff)</li>
+                                <li>Connector-durchgesetzte Nutzungskontrolle</li>
+                                <li>Audit-Trails für Compliance-Prüfung</li>
+                                <li><strong style="color: var(--color-secondary);">Risiko:</strong> Erfordert Vertrauen in Connector-Implementierung</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>MCP</h3>
+                            <ul>
+                                <li>Host-kontrollierter Zugriff (Gatekeeper-Modell)</li>
+                                <li>Tool-Level-Berechtigungen (Scope-Begrenzung)</li>
+                                <li>Keine native IP-Schutz-Spezifikation</li>
+                                <li>Verlässt sich auf Anwendungsebenen-Durchsetzung</li>
+                                <li>Benutzerzustimmung als primäre Kontrolle</li>
+                                <li><strong style="color: var(--color-accent);">Risiko:</strong> Über-Sharing via Konversationsschnittstelle</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card card-warning">
+                        <strong>Fazit:</strong> DataSpace bietet die stärkste technische IP-Durchsetzung; MCP die schwächste (basiert auf Vertrauen).
+                    </div>
+                </div>
+            </section>
+
+            <!-- Folie 5: Datenschutz & Compliance -->
+            <section>
+                <div class="slide-content">
+                    <h2>Schutz personenbezogener Daten: Regulatorische Ausrichtung</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>DSGVO/Datenschutz-Anforderungen</h3>
+                            <ul>
+                                <li>Rechtliche Grundlage für Verarbeitung</li>
+                                <li>Zweckbindung</li>
+                                <li>Datenminimierung</li>
+                                <li>Speicherbegrenzung</li>
+                                <li>Einwilligungsverwaltung</li>
+                                <li>Recht auf Löschung</li>
+                                <li>Datenschutzverletzungsmeldung (72h)</li>
+                                <li>Grenzüberschreitende Übertragungsbeschränkungen</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Wie Protokolle dies adressieren</h3>
+                            <div class="card card-primary" style="margin-bottom: 0.5rem;">
+                                <h4>APIs</h4>
+                                <p style="font-size: 0.85rem;">✅ Individuelle Verträge pro Rechtsprechung<br/>
+                                ✅ Entwicklergesteuerte Datenflüsse<br/>
+                                ⚠️ Kein standardisiertes Einwilligungsmodell<br/>
+                                ⚠️ Datenschutz durch Implementierung, nicht Design</p>
+                            </div>
+                            <div class="card card-success" style="margin-bottom: 0.5rem;">
+                                <h4>DataSpace</h4>
+                                <p style="font-size: 0.85rem;">✅✅ ODRL-Richtlinien kodieren Zweck-/Zeitlimits<br/>
+                                ✅ Technische Nutzungskontroll-Durchsetzung<br/>
+                                ✅ Föderierte Identität (Daten bleiben lokal)<br/>
+                                ✅ Audit-Trails für DSGVO-Compliance</p>
+                            </div>
+                            <div class="card card-warning" style="margin-bottom: 0;">
+                                <h4>MCP</h4>
+                                <p style="font-size: 0.85rem;">✅ Echtzeit-Benutzerzustimmung (Human-in-Loop)<br/>
+                                ✅ OAuth 2.1 mit PKCE (sichere Authentifizierung)<br/>
+                                ⚠️ Keine native Datenminimierungsdurchsetzung<br/>
+                                🔄 Verifiable Credentials kommen (ToIP/DIF AG)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Folie 6: Wetter-API-Beispiel -->
+            <section>
+                <div class="slide-content">
+                    <h2>Warum Protokolle wichtig sind: Dynamischer Datenzugriff</h2>
+                    <div class="card card-primary" style="margin-bottom: 1rem;">
+                        <h3>Das Szenario</h3>
+                        <p style="font-style: italic;">"Wie wird das Wetter morgen in Wien?"</p>
+                    </div>
+                    <div class="grid grid-3">
+                        <div class="card card-warning">
+                            <h4>❌ Ohne Protokolle</h4>
+                            <p><strong>LLM:</strong> "Ich kann keine aktuellen Wetterdaten bereitstellen (Trainingsdaten-Begrenzung)"</p>
+                            <p><strong>Ergebnis:</strong> Kein geschäftlicher Wert, frustrierter Benutzer</p>
+                        </div>
+                        <div class="card">
+                            <h4>⚠️ Traditionelle Wetter-API</h4>
+                            <p>✅ Entwickler integriert API manuell<br/>
+                            ⚠️ Erfordert Programmierung, API-Schlüsselverwaltung<br/>
+                            ⚠️ <strong>IP:</strong> Durchgesetzt via API-Bedingungen, Ratenlimits<br/>
+                            ⚠️ <strong>Datenschutz:</strong> Standort-Tracking-Bedenken</p>
+                            <p><strong>Ergebnis:</strong> Funktioniert für Entwickler, nicht Endbenutzer</p>
+                        </div>
+                        <div class="card card-success">
+                            <h4>✅ MCP + Wetter-Tool</h4>
+                            <p>✅ Benutzer: Anfrage in natürlicher Sprache<br/>
+                            ✅ MCP-Server: Ruft Wetter-API auf<br/>
+                            ✅ Antwort: "Wien (26. Okt): 12°C, zeitweise Regen, 22%"<br/>
+                            ⚠️ <strong>IP:</strong> Wetter-Anbieter API-Bedingungen gelten<br/>
+                            ⚠️ <strong>Datenschutz:</strong> Standortdaten mit Zustimmung geteilt</p>
+                            <p><strong>Ergebnis:</strong> Demokratisierter Zugriff</p>
+                        </div>
+                    </div>
+                    <div class="card card-success">
+                        <strong>Lektion:</strong> MCP ist die Schnittstellenschicht; APIs/DataSpace sind die Infrastrukturschicht.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Folie 7: Kernspannung -->
+            <section>
+                <div class="slide-content">
+                    <h2>Die Kernspannung: Monetarisierung vs. Schutz</h2>
+                    <div class="grid grid-2">
+                        <div class="card card-primary">
+                            <h3>Datenwert maximieren</h3>
+                            <ul>
+                                <li>Daten breit teilen</li>
+                                <li>KI-Training auf Ihren Daten ermöglichen</li>
+                                <li>Offene APIs für Ökosystem-Wachstum</li>
+                                <li>Abgeleitete Erkenntnisse zulassen</li>
+                                <li>Grenzüberschreitende Datenflüsse</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>Geschäftsziel:</strong> Umsatz, Innovation, Markterweiterung</p>
+                        </div>
+                        <div class="card card-warning">
+                            <h3>IP & Datenschutz schützen</h3>
+                            <ul>
+                                <li>Datenzugriff einschränken</li>
+                                <li>Unbefugte Nutzung verhindern</li>
+                                <li>Abgeleitete Werke kontrollieren</li>
+                                <li>Zweck und Dauer begrenzen</li>
+                                <li>Datenlokalisierungsanforderungen</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>Rechtliches Ziel:</strong> Compliance, Wettbewerbsvorteil, Kundenvertrauen</p>
+                        </div>
+                    </div>
+                    <div class="card card-primary">
+                        <h3>Protokoll-Lösungen</h3>
+                        <div class="grid grid-3">
+                            <div><strong>APIs:</strong> Verträge + technische Kontrollen (teilweise)</div>
+                            <div><strong>DataSpace:</strong> ODRL + Nutzungskontrolle (am stärksten für B2B)</div>
+                            <div><strong>MCP:</strong> Benutzerzustimmung + OAuth (am stärksten für B2C)</div>
+                        </div>
+                    </div>
+                    <div class="card card-success">
+                        <strong>Aufkommende Lösung:</strong> Föderiertes Lernen, Data Trusts, verifiable Credentials (kombinieren Wert + Schutz)
+                    </div>
+                </div>
+            </section>
+
+            <!-- Folie 8: DataSpace Protocol -->
+            <section>
+                <div class="slide-content">
+                    <h2>DataSpace Protocol: Entwickelt für IP-Schutz & Datensouveränität</h2>
+                    <div class="card card-primary">
+                        <h3>Architektur-Fluss</h3>
+                        <p style="text-align: center; font-family: var(--font-mono);">Org A (Connector) ↔ Vertragsverhandlung ↔ Org B (Connector) ↔ Datenübertragung</p>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>Hauptkomponenten</h3>
+                            <ul>
+                                <li><strong>Katalog-Protokoll (DCAT):</strong> Verfügbare Datensätze beschreiben, Metadaten</li>
+                                <li><strong>Vertragsverhandlung:</strong> Automatisierter ODRL-Richtlinienaustausch</li>
+                                <li><strong>Übertragungsprotokoll:</strong> Sicherer Datenaustausch nach Vereinbarung</li>
+                                <li><strong>Nutzungskontrolle:</strong> Technische Durchsetzung auf Connector-Ebene</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>IP-Schutz-Funktionen</h3>
+                            <ul>
+                                <li>21 ODRL-Richtlinienklassen (Zweck, Zeit, Ort, Löschung)</li>
+                                <li>Vertragsbedingungen sind maschinenlesbar und durchsetzbar</li>
+                                <li>Audit-Protokolle für Compliance-Überprüfung</li>
+                                <li>Daten bewegen sich nicht ohne Vereinbarung</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>Datenschutz-Funktionen</h3>
+                            <ul>
+                                <li>Föderierte Architektur (Datensouveränität)</li>
+                                <li>DCP (Decentralized Claims Protocol) für Identität</li>
+                                <li>OpenID4VC-Integrationspfad (verifiable Credentials)</li>
+                                <li>DSGVO-konform by Design</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>Anwendungsfälle</h3>
+                            <ul>
+                                <li>Mobilitäts-DataSpace</li>
+                                <li>Catena-X (Automobil)</li>
+                                <li>Energiedatenaustausch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Folie 9: MCP Details -->
+            <section>
+                <div class="slide-content">
+                    <h2>MCP: Zugriff in natürlicher Sprache mit Echtzeit-Zustimmung</h2>
+                    <div class="card card-primary">
+                        <h3>Architektur-Fluss</h3>
+                        <p style="text-align: center; font-family: var(--font-mono);">Benutzer → MCP Client (LLM) → MCP Server (Tools/Ressourcen) → Backend APIs/Daten</p>
+                        <p style="text-align: center; margin-top: 0.5rem;"><strong>Aktuelle Spezifikation:</strong> 2025-06-18 (Nächster RC: 25. Nov 2025)</p>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>Geschäftlicher Wert</h3>
+                            <ul>
+                                <li>Demokratisierung des Datenzugriffs (keine SQL/Programmierung erforderlich)</li>
+                                <li>Abfragen in natürlicher Sprache: "Zeige Q3-Umsatz nach Region"</li>
+                                <li>Entscheidungsfindung in Echtzeit</li>
+                                <li>Reduzierte Schulungskosten (intuitive Schnittstelle)</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>IP-Überlegungen</h3>
+                            <ul>
+                                <li>⚠️ Keine native IP-Schutz-Spezifikation</li>
+                                <li>⚠️ Tool-Beschreibungen für LLM sichtbar (Metadaten-Leckage-Risiko)</li>
+                                <li>✅ Host-kontrollierter Zugriff (Gatekeeper-Modell)</li>
+                                <li>✅ Scope-begrenzte Tools (Exposition minimieren)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>Datenschutz-Funktionen</h3>
+                            <ul>
+                                <li>✅ OAuth 2.1 mit externen Auth-Servern (Auth0, Keycloak, Logto)</li>
+                                <li>✅ Benutzerzustimmung pro Interaktion erforderlich</li>
+                                <li>✅ PKCE verpflichtend (verhindert Token-Diebstahl)</li>
+                                <li>⚠️ Microsoft Entra ID: Teilweise Unterstützung (kein DCR)</li>
+                                <li>🔄 Zukunft: Verifiable Credentials (ToIP/DIF Arbeitsgruppe, Sep 2025)</li>
+                            </ul>
+                        </div>
+                        <div class="card card-warning">
+                            <h3>Sicherheitsherausforderungen</h3>
+                            <ul>
+                                <li>Prompt Injection (OWASP #1 LLM-Risiko)</li>
+                                <li>Tool-Vergiftung, RCE-Schwachstellen</li>
+                                <li>Cloud Security Alliance (CSA) arbeitet an MCP-Sicherheitsstandards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Folie 10: Geschichtete Architektur -->
             <section>
                 <div class="slide-content">
                     <h2>Integrationsstrategie: Geschichtete Architektur</h2>
@@ -150,7 +423,55 @@
                 </div>
             </section>
 
-            <!-- Folie 6: Strategische Empfehlungen -->
+            <!-- Folie 11: Zukunftstrends -->
+            <section>
+                <div class="slide-content">
+                    <h2>Die Zukunft: Verifiable Credentials & Föderiertes Lernen</h2>
+                    <h3>Aktive Entwicklungen</h3>
+                    <div class="card card-primary">
+                        <h4>1. Verifiable Credentials für MCP</h4>
+                        <ul>
+                            <li>ToIP/DIF-Arbeitsgruppe (gestartet Sep 2025)</li>
+                            <li>IETF-Entwurf: OAuth DCR + Trusted Issuer Tokens</li>
+                            <li>Ziel: Kryptografisch nachweisbare Agenten-Identität</li>
+                            <li>Überbrückt MCP ↔ DataSpace-Vertrauensmodelle</li>
+                        </ul>
+                    </div>
+                    <div class="card card-success">
+                        <h4>2. Föderiertes Lernen / Data Trusts</h4>
+                        <ul>
+                            <li>KI-Modelle trainieren ohne Datenzentralisierung</li>
+                            <li>Beispiel: Boehringer Ingelheim (Genomforschung)</li>
+                            <li>Erhält IP + Datenschutz bei Ermöglichung der Zusammenarbeit</li>
+                            <li>Unterstützt durch föderierte DataSpace-Architektur</li>
+                        </ul>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h4>3. MCP-Sicherheits-Standardisierung</h4>
+                            <ul>
+                                <li>Cloud Security Alliance: modelcontextprotocol-security.io</li>
+                                <li>OWASP LLM Top 10 Integration</li>
+                                <li>Fokus: Prompt Injection, Tool-Vergiftung, RCE-Prävention</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>4. DataSpace ISO-Standardisierung</h4>
+                            <ul>
+                                <li>Eclipse/IDSA bewegt sich in Richtung internationaler Standard</li>
+                                <li>Breitere Akzeptanz außerhalb Europas</li>
+                            </ul>
+                            <h4 style="margin-top: 1rem;">5. Natürlichsprachliche Verträge</h4>
+                            <ul>
+                                <li>ODRL → Menschenlesbare Übersetzung</li>
+                                <li>MCP-Schnittstellen für Vertragsverhandlung</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Folie 12: Strategische Empfehlungen -->
             <section>
                 <div class="slide-content">
                     <h2>Strategische Empfehlungen</h2>

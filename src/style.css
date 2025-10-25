@@ -115,6 +115,63 @@ html, body {
   width: 100%;
 }
 
+.reveal .slides section {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding-right: 10px;
+}
+
+/* Custom Scrollbar */
+.reveal .slides section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.reveal .slides section::-webkit-scrollbar-track {
+  background: rgba(94, 82, 64, 0.05);
+  border-radius: 4px;
+}
+
+.reveal .slides section::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.reveal .slides section::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Scroll indicator for overflowing content */
+.reveal .slides section::after {
+  content: '';
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+.reveal .slides section.has-overflow::after {
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -175,8 +232,7 @@ html, body {
   padding: var(--space-lg);
   box-shadow: var(--shadow-md);
   border: 1px solid var(--color-border);
-  height: 100%;
-  overflow-y: auto;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }

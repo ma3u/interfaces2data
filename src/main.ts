@@ -13,7 +13,7 @@ const deck = new Reveal({
   margin: 0.04,
   minScale: 0.2,
   maxScale: 2.0,
-  center: true,
+  center: false,
   transition: 'slide',
   transitionSpeed: 'default',
   backgroundTransition: 'fade',
@@ -37,6 +37,7 @@ const deck = new Reveal({
   display: 'block',
   hideInactiveCursor: true,
   hideCursorTime: 5000,
+  navigationMode: 'linear',
 });
 
 // Initialize presentation
@@ -58,6 +59,46 @@ deck.initialize().then(() => {
   }
 
   sessionStorage.setItem('languageSelected', 'true');
+
+  // Add scroll indicators for overflowing content
+  function checkOverflow() {
+    const sections = document.querySelectorAll('.reveal .slides section');
+    sections.forEach((section) => {
+      const element = section as HTMLElement;
+      if (element.scrollHeight > element.clientHeight) {
+        element.classList.add('has-overflow');
+      } else {
+        element.classList.remove('has-overflow');
+      }
+    });
+  }
+
+  // Check overflow on slide change and resize
+  deck.on('slidechanged', checkOverflow);
+  window.addEventListener('resize', checkOverflow);
+
+  // Initial check
+  setTimeout(checkOverflow, 500);
+
+  // Custom keyboard handling for scrolling
+  document.addEventListener('keydown', (event) => {
+    const activeSlide = document.querySelector('.reveal .slides section.present') as HTMLElement;
+    if (!activeSlide) return;
+
+    // Allow up/down arrows to scroll within the slide
+    if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+      if (activeSlide.scrollHeight > activeSlide.clientHeight) {
+        // Content is scrollable, let the default behavior work
+        event.stopPropagation();
+
+        if (event.key === 'ArrowUp') {
+          activeSlide.scrollTop -= 50;
+        } else {
+          activeSlide.scrollTop += 50;
+        }
+      }
+    }
+  }, true);
 });
 
 // Export for debugging

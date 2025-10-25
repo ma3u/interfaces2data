@@ -109,6 +109,12 @@ body {
   text-align: left;
 }
 
+html, body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -166,10 +172,13 @@ body {
 .slide-content {
   background: var(--color-surface);
   border-radius: var(--radius);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   box-shadow: var(--shadow-md);
   border: 1px solid var(--color-border);
-  min-height: 500px;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Cards */

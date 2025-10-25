@@ -1,5 +1,6 @@
 import Reveal from 'reveal.js';
 import 'reveal.js/dist/reveal.css';
+import 'reveal.js/dist/theme/white.css';
 import './style.css';
 import { generateSVGs } from './utils/svg-generator';
 

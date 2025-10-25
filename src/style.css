@@ -285,7 +285,7 @@ html, body {
 }
 
 .reveal h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -293,32 +293,33 @@ html, body {
 }
 
 .reveal h2 {
-  font-size: 2.25rem;
-  border-bottom: 4px solid var(--color-primary);
+  font-size: 1.5rem;
+  border-bottom: 3px solid var(--color-primary);
   padding-bottom: var(--space-sm);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .reveal h3 {
-  font-size: 1.75rem;
+  font-size: 1.2rem;
   color: var(--color-primary);
 }
 
 .reveal p {
-  margin-bottom: var(--space-md);
-  line-height: 1.7;
-  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .reveal ul,
 .reveal ol {
   margin-left: var(--space-lg);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .reveal li {
-  margin-bottom: var(--space-sm);
-  line-height: 1.7;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .reveal strong {
@@ -396,23 +397,24 @@ html, body {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  margin: var(--space-lg) 0;
+  margin: var(--space-md) 0;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  font-size: 0.85rem;
 }
 
 .reveal th {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: white;
-  padding: var(--space-md);
+  padding: 0.6rem;
   text-align: left;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .reveal td {
-  padding: var(--space-md);
+  padding: 0.6rem;
   border-bottom: 1px solid var(--color-border);
   background: var(--color-surface);
   transition: var(--transition);
@@ -591,16 +593,21 @@ html, body {
   background: linear-gradient(135deg, rgba(50, 184, 198, 0.1), rgba(29, 116, 128, 0.05));
   border: 2px solid var(--color-primary);
   border-radius: var(--radius);
-  padding: var(--space-lg);
-  margin: var(--space-lg) 0;
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
   text-align: center;
   box-shadow: var(--shadow-md);
 }
 
 .highlight-box h3 {
-  font-size: 1.8rem;
-  margin-bottom: var(--space-md);
+  font-size: 1.3rem;
+  margin-bottom: var(--space-sm);
   color: var(--color-primary-dark);
+  line-height: 1.4;
+}
+
+.highlight-box p {
+  font-size: 0.95rem;
 }
 
 /* Icon List */

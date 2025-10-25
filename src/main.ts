@@ -17,7 +17,7 @@ const deck = new Reveal({
   transition: 'slide',
   transitionSpeed: 'default',
   backgroundTransition: 'fade',
-  controls: true,
+  controls: false,
   progress: true,
   keyboard: true,
   touch: true,

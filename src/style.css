@@ -86,9 +86,9 @@ body {
 .slide-counter {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  left: 2rem;
   z-index: 1000;
-  background: var(--color-surface);
+  background: rgba(38, 38, 38, 0.95);
   padding: 0.75rem 1.5rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
@@ -97,7 +97,7 @@ body {
   font-family: var(--font-mono);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
   transition: var(--transition);
   display: flex;
   align-items: center;
@@ -111,9 +111,37 @@ body {
 }
 
 .slide-counter .arrow {
+  background: none;
+  border: none;
   color: var(--color-primary);
-  font-size: 1rem;
-  opacity: 0.7;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: var(--transition);
+  font-family: var(--font-mono);
+}
+
+.slide-counter .arrow:hover {
+  background: rgba(80, 212, 228, 0.2);
+  transform: scale(1.2);
+  box-shadow: 0 2px 8px rgba(80, 212, 228, 0.4);
+}
+
+.slide-counter .arrow:active {
+  transform: scale(1.05);
+}
+
+.slide-counter .arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.slide-counter .arrow:disabled:hover {
+  background: none;
+  transform: none;
+  box-shadow: none;
 }
 
 .slide-counter .current {
@@ -174,111 +202,13 @@ html, body {
 
 .reveal .slides section {
   height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  padding-right: 10px;
-}
-
-/* Custom Scrollbar */
-.reveal .slides section::-webkit-scrollbar {
-  width: 8px;
-}
-
-.reveal .slides section::-webkit-scrollbar-track {
-  background: rgba(94, 82, 64, 0.05);
-  border-radius: 4px;
-}
-
-.reveal .slides section::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 4px;
-  transition: var(--transition);
-}
-
-.reveal .slides section::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-dark);
-}
-
-/* Scroll Indicators */
-.scroll-indicator {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
-  background: rgba(119, 124, 124, 0.7);
-  border-radius: 50%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 999;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.scroll-indicator.visible {
-  opacity: 1;
-}
-
-.scroll-indicator-down {
-  bottom: 120px;
-  animation: bounceDown 2s infinite ease-in-out;
-}
-
-.scroll-indicator-up {
-  top: 80px;
-  animation: bounceUp 2s infinite ease-in-out;
-}
-
-.scroll-indicator svg {
-  width: 24px;
-  height: 24px;
-  fill: white;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-@keyframes bounceDown {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(10px);
-  }
-}
-
-@keyframes bounceUp {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .scroll-indicator {
-    width: 40px;
-    height: 40px;
-  }
-
-  .scroll-indicator svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .scroll-indicator-down {
-    bottom: 80px;
-  }
-
-  .scroll-indicator-up {
-    top: 60px;
-  }
-}
+/* No scroll indicators needed - content fits on screen */
 
 .reveal h1,
 .reveal h2,
@@ -292,51 +222,53 @@ html, body {
 }
 
 .reveal h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--color-primary);
   font-weight: 800;
   text-shadow: 0 2px 10px rgba(80, 212, 228, 0.3);
+  margin-bottom: 1rem;
 }
 
 .reveal h2 {
-  font-size: 1.8rem;
-  border-bottom: 4px solid var(--color-primary);
-  padding-bottom: var(--space-sm);
-  margin-bottom: var(--space-md);
+  font-size: 1.6rem;
+  border-bottom: 3px solid var(--color-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: var(--color-text);
   font-weight: 700;
 }
 
 .reveal h3 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   color: var(--color-primary);
   font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 
 .reveal h4 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-text);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .reveal p {
-  margin-bottom: var(--space-sm);
-  line-height: 1.7;
-  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
   color: var(--color-text);
 }
 
 .reveal ul,
 .reveal ol {
   margin-left: var(--space-lg);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.5rem;
 }
 
 .reveal li {
-  margin-bottom: 0.6rem;
-  line-height: 1.7;
-  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
   color: var(--color-text);
 }
 
@@ -349,23 +281,25 @@ html, body {
 .slide-content {
   background: var(--color-surface);
   border-radius: var(--radius);
-  padding: var(--space-lg);
+  padding: 1.5rem;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--color-border);
-  min-height: 100%;
+  width: 100%;
+  max-height: 95%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* Cards */
 .card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius);
-  padding: var(--space-lg);
+  padding: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: var(--transition);
-  margin-bottom: var(--space-md);
+  margin-bottom: 0.75rem;
 }
 
 .card:hover {
@@ -392,8 +326,8 @@ html, body {
 /* Grid Layouts */
 .grid {
   display: grid;
-  gap: var(--space-lg);
-  margin: var(--space-lg) 0;
+  gap: 1rem;
+  margin: 0.75rem 0;
 }
 
 .grid-2 {
@@ -596,17 +530,35 @@ html, body {
   transition: var(--transition);
 }
 
-/* Controls Customization */
+/* Hide default Reveal.js controls - using custom slide counter instead */
 .reveal .controls {
-  color: var(--color-primary);
+  display: none;
 }
 
-.reveal .controls button {
-  transition: var(--transition);
+/* Overview Mode Customization */
+.reveal.overview .slides section {
+  border: 3px solid var(--color-primary);
+  opacity: 1;
 }
 
-.reveal .controls button:hover {
-  transform: scale(1.1);
+.reveal.overview .slides section:hover {
+  border-color: var(--color-success);
+  transform: scale(1.05);
+}
+
+/* Slide numbers in overview mode */
+.reveal .slide-number {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(80, 212, 228, 0.9);
+  color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Highlight Box */

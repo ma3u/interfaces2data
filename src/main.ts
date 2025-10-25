@@ -29,8 +29,9 @@ const deck = new Reveal({
   embedded: false,
   help: true,
   showNotes: false,
-  autoSlide: 0,
+  autoSlide: 5000,
   autoSlideStoppable: true,
+  autoSlideMethod: Reveal.navigateNext,
   preloadIframes: null,
   autoAnimate: true,
   autoAnimateMatcher: null,
@@ -101,6 +102,40 @@ deck.initialize().then(() => {
 
   // Initial update
   updateSlideCounter();
+
+  // Auto-slide control: Advance fragments but NOT slides
+  deck.on('slidechanged', () => {
+    // When changing slides, check if new slide has fragments
+    const currentSlide = document.querySelector('.reveal .slides section.present');
+    if (!currentSlide) return;
+
+    const fragments = currentSlide.querySelectorAll('.fragment');
+
+    if (fragments.length > 0) {
+      // Has fragments - enable auto-slide for fragments only
+      deck.configure({ autoSlide: 5000 });
+    } else {
+      // No fragments - disable auto-slide (stay on slide)
+      deck.configure({ autoSlide: 0 });
+    }
+  });
+
+  // Check after each fragment if all are shown, then pause
+  deck.on('fragmentshown', () => {
+    const currentSlide = document.querySelector('.reveal .slides section.present');
+    if (!currentSlide) return;
+
+    const fragments = currentSlide.querySelectorAll('.fragment');
+    const visibleFragments = currentSlide.querySelectorAll('.fragment.visible');
+
+    // If all fragments are visible, pause auto-slide (don't advance to next slide)
+    if (fragments.length === visibleFragments.length) {
+      deck.configure({ autoSlide: 0 });
+    } else {
+      // Still fragments to show - keep auto-slide active
+      deck.configure({ autoSlide: 5000 });
+    }
+  });
 
   // Create scroll indicators
   const scrollIndicatorDown = document.createElement('div');

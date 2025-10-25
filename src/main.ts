@@ -4,7 +4,7 @@ import 'reveal.js/dist/theme/black.css';
 import './style.css';
 import { generateSVGs } from './utils/svg-generator';
 
-// Initialize Reveal.js with 16:9 optimization
+// Initialize Reveal.js with 16:9 optimization and auto-advance fragments
 const deck = new Reveal({
   hash: true,
   respondToHashChanges: true,
@@ -29,7 +29,10 @@ const deck = new Reveal({
   embedded: false,
   help: true,
   showNotes: false,
-  autoPlayMedia: null,
+  autoSlide: 5000,
+  autoSlideStoppable: true,
+  autoSlideMethod: null,
+  defaultTiming: null,
   preloadIframes: null,
   autoAnimate: true,
   autoAnimateMatcher: null,
@@ -163,22 +166,37 @@ deck.initialize().then(() => {
 
   // Custom keyboard handling for scrolling with up/down arrows
   document.addEventListener('keydown', (event) => {
+    // Only handle if not in overview mode
+    if (deck.isOverview()) return;
+
     const activeSlide = document.querySelector('.reveal .slides section.present') as HTMLElement;
     if (!activeSlide) return;
 
     // Allow up/down arrows to scroll within the slide
     if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-      // Prevent Reveal.js from using these keys for navigation
-      event.stopPropagation();
+      const hasScrollableContent = activeSlide.scrollHeight > activeSlide.clientHeight;
 
-      if (event.key === 'ArrowUp') {
-        activeSlide.scrollTop -= 60;
-      } else {
-        activeSlide.scrollTop += 60;
+      if (hasScrollableContent) {
+        // Prevent Reveal.js from using these keys for navigation
+        event.preventDefault();
+        event.stopPropagation();
+
+        const scrollAmount = 80;
+        if (event.key === 'ArrowUp') {
+          activeSlide.scrollTo({
+            top: activeSlide.scrollTop - scrollAmount,
+            behavior: 'smooth'
+          });
+        } else {
+          activeSlide.scrollTo({
+            top: activeSlide.scrollTop + scrollAmount,
+            behavior: 'smooth'
+          });
+        }
+
+        // Update scroll indicators after scrolling
+        setTimeout(updateScrollIndicators, 100);
       }
-
-      // Update scroll indicators after scrolling
-      setTimeout(updateScrollIndicators, 50);
     }
   }, true);
 

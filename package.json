@@ -1,0 +1,36 @@
+{
+  "name": "interface2data",
+  "version": "2.0.0",
+  "description": "Data Paradox: Monetization vs Protection - Interactive Presentation",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ma3u/interfaces2data.git"
+  },
+  "keywords": [
+    "data",
+    "privacy",
+    "protocols",
+    "presentation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ma3u/interfaces2data/issues"
+  },
+  "homepage": "https://ma3u.github.io/interfaces2data/",
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "@types/reveal.js": "^5.2.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12"
+  },
+  "dependencies": {
+    "reveal.js": "^5.2.1"
+  }
+}

@@ -65,7 +65,7 @@
             <section>
                 <div class="slide-content">
                     <h2>Datenmonetarisierungsmodelle & Protokoll-Eignung</h2>
-                    <table>
+                    <table class="fragment">
                         <thead>
                             <tr>
                                 <th>Geschäftsmodell</th>
@@ -107,7 +107,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="card card-success">
+                    <div class="card card-success fragment">
                         <strong>Wichtige Erkenntnis:</strong> Kein einzelnes Protokoll löst alle Monetarisierungsmodelle. Die Architektur muss zur Geschäftsstrategie passen.
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                 <div class="slide-content">
                     <h2>Schutzmechanismen für geistiges Eigentum</h2>
                     <div class="grid grid-3">
-                        <div class="card">
+                        <div class="card fragment">
                             <h3>Traditionelle APIs</h3>
                             <ul>
                                 <li>Lizenzvereinbarungen (pro API-Verträge)</li>
@@ -129,7 +129,7 @@
                                 <li><strong style="color: var(--color-accent);">Risiko:</strong> Fair-Use-Verteidigung, schwierige Durchsetzung</li>
                             </ul>
                         </div>
-                        <div class="card">
+                        <div class="card fragment">
                             <h3>DataSpace Protocol</h3>
                             <ul>
                                 <li>ODRL-Nutzungsrichtlinien (maschinenlesbare Verträge)</li>
@@ -140,7 +140,7 @@
                                 <li><strong style="color: var(--color-secondary);">Risiko:</strong> Erfordert Vertrauen in Connector-Implementierung</li>
                             </ul>
                         </div>
-                        <div class="card">
+                        <div class="card fragment">
                             <h3>MCP</h3>
                             <ul>
                                 <li>Host-kontrollierter Zugriff (Gatekeeper-Modell)</li>
@@ -152,7 +152,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="card card-warning">
+                    <div class="card card-warning fragment">
                         <strong>Fazit:</strong> DataSpace bietet die stärkste technische IP-Durchsetzung; MCP die schwächste (basiert auf Vertrauen).
                     </div>
                 </div>
@@ -163,7 +163,7 @@
                 <div class="slide-content">
                     <h2>Schutz personenbezogener Daten: Regulatorische Ausrichtung</h2>
                     <div class="grid grid-2">
-                        <div class="card">
+                        <div class="card fragment">
                             <h3>DSGVO/Datenschutz-Anforderungen</h3>
                             <ul>
                                 <li>Rechtliche Grundlage für Verarbeitung</li>
@@ -176,7 +176,7 @@
                                 <li>Grenzüberschreitende Übertragungsbeschränkungen</li>
                             </ul>
                         </div>
-                        <div>
+                        <div class="fragment">
                             <h3>Wie Protokolle dies adressieren</h3>
                             <div class="card card-primary" style="margin-bottom: 0.5rem;">
                                 <h4>APIs</h4>
@@ -208,11 +208,11 @@
             <section>
                 <div class="slide-content">
                     <h2>Warum Protokolle wichtig sind: Dynamischer Datenzugriff</h2>
-                    <div class="card card-primary" style="margin-bottom: 1rem;">
+                    <div class="card card-primary fragment" style="margin-bottom: 1rem;">
                         <h3>Das Szenario</h3>
                         <p style="font-style: italic;">"Wie wird das Wetter morgen in Wien?"</p>
                     </div>
-                    <div class="grid grid-3">
+                    <div class="grid grid-3 fragment">
                         <div class="card card-warning">
                             <h4>❌ Ohne Protokolle</h4>
                             <p><strong>LLM:</strong> "Ich kann keine aktuellen Wetterdaten bereitstellen (Trainingsdaten-Begrenzung)"</p>
@@ -236,7 +236,7 @@
                             <p><strong>Ergebnis:</strong> Demokratisierter Zugriff</p>
                         </div>
                     </div>
-                    <div class="card card-success">
+                    <div class="card card-success fragment">
                         <strong>Lektion:</strong> MCP ist die Schnittstellenschicht; APIs/DataSpace sind die Infrastrukturschicht.
                     </div>
                 </div>
@@ -246,7 +246,7 @@
             <section>
                 <div class="slide-content">
                     <h2>Die Kernspannung: Monetarisierung vs. Schutz</h2>
-                    <div class="grid grid-2">
+                    <div class="grid grid-2 fragment">
                         <div class="card card-primary">
                             <h3>Datenwert maximieren</h3>
                             <ul>
@@ -270,7 +270,7 @@
                             <p style="margin-top: 1rem;"><strong>Rechtliches Ziel:</strong> Compliance, Wettbewerbsvorteil, Kundenvertrauen</p>
                         </div>
                     </div>
-                    <div class="card card-primary">
+                    <div class="card card-primary fragment">
                         <h3>Protokoll-Lösungen</h3>
                         <div class="grid grid-3">
                             <div><strong>APIs:</strong> Verträge + technische Kontrollen (teilweise)</div>
@@ -278,7 +278,7 @@
                             <div><strong>MCP:</strong> Benutzerzustimmung + OAuth (am stärksten für B2C)</div>
                         </div>
                     </div>
-                    <div class="card card-success">
+                    <div class="card card-success fragment">
                         <strong>Aufkommende Lösung:</strong> Föderiertes Lernen, Data Trusts, verifiable Credentials (kombinieren Wert + Schutz)
                     </div>
                 </div>
@@ -288,11 +288,11 @@
             <section>
                 <div class="slide-content">
                     <h2>DataSpace Protocol: Entwickelt für IP-Schutz & Datensouveränität</h2>
-                    <div class="card card-primary">
+                    <div class="card card-primary fragment">
                         <h3>Architektur-Fluss</h3>
                         <p style="text-align: center; font-family: var(--font-mono);">Org A (Connector) ↔ Vertragsverhandlung ↔ Org B (Connector) ↔ Datenübertragung</p>
                     </div>
-                    <div class="grid grid-2">
+                    <div class="grid grid-2 fragment">
                         <div class="card">
                             <h3>Hauptkomponenten</h3>
                             <ul>
@@ -312,7 +312,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="grid grid-2">
+                    <div class="grid grid-2 fragment">
                         <div class="card">
                             <h3>Datenschutz-Funktionen</h3>
                             <ul>
@@ -338,12 +338,12 @@
             <section>
                 <div class="slide-content">
                     <h2>MCP: Zugriff in natürlicher Sprache mit Echtzeit-Zustimmung</h2>
-                    <div class="card card-primary">
+                    <div class="card card-primary fragment">
                         <h3>Architektur-Fluss</h3>
                         <p style="text-align: center; font-family: var(--font-mono);">Benutzer → MCP Client (LLM) → MCP Server (Tools/Ressourcen) → Backend APIs/Daten</p>
                         <p style="text-align: center; margin-top: 0.5rem;"><strong>Aktuelle Spezifikation:</strong> 2025-06-18 (Nächster RC: 25. Nov 2025)</p>
                     </div>
-                    <div class="grid grid-2">
+                    <div class="grid grid-2 fragment">
                         <div class="card">
                             <h3>Geschäftlicher Wert</h3>
                             <ul>
@@ -363,7 +363,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="grid grid-2">
+                    <div class="grid grid-2 fragment">
                         <div class="card">
                             <h3>Datenschutz-Funktionen</h3>
                             <ul>
@@ -390,8 +390,8 @@
             <section>
                 <div class="slide-content">
                     <h2>Integrationsstrategie: Geschichtete Architektur</h2>
-                    <div id="architecture-svg" class="svg-container"></div>
-                    <div class="grid grid-2">
+                    <div id="architecture-svg" class="svg-container fragment"></div>
+                    <div class="grid grid-2 fragment">
                         <div class="card card-success">
                             <h3>Vorteile</h3>
                             <ul class="icon-list">
@@ -417,7 +417,7 @@
                 <div class="slide-content">
                     <h2>Die Zukunft: Verifiable Credentials & Föderiertes Lernen</h2>
                     <h3>Aktive Entwicklungen</h3>
-                    <div class="card card-primary">
+                    <div class="card card-primary fragment">
                         <h4>1. Verifiable Credentials für MCP</h4>
                         <ul>
                             <li>ToIP/DIF-Arbeitsgruppe (gestartet Sep 2025)</li>
@@ -426,7 +426,7 @@
                             <li>Überbrückt MCP ↔ DataSpace-Vertrauensmodelle</li>
                         </ul>
                     </div>
-                    <div class="card card-success">
+                    <div class="card card-success fragment">
                         <h4>2. Föderiertes Lernen / Data Trusts</h4>
                         <ul>
                             <li>KI-Modelle trainieren ohne Datenzentralisierung</li>
@@ -435,7 +435,7 @@
                             <li>Unterstützt durch föderierte DataSpace-Architektur</li>
                         </ul>
                     </div>
-                    <div class="grid grid-2">
+                    <div class="grid grid-2 fragment">
                         <div class="card">
                             <h4>3. MCP-Sicherheits-Standardisierung</h4>
                             <ul>
@@ -464,7 +464,7 @@
             <section>
                 <div class="slide-content">
                     <h2>Meine persönlichen Empfehlungen</h2>
-                    <div class="grid grid-3">
+                    <div class="grid grid-3 fragment">
                         <div class="card">
                             <h3>Für Monetarisierung</h3>
                             <ul>
@@ -491,11 +491,11 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="highlight-box">
+                    <div class="highlight-box fragment">
                         <h3>Meine Erfahrungen aus Datenraumprojekten</h3>
                         <p><strong>Ein reiner Datenmarktplatz funktioniert nicht.</strong> Man muss den Kunden wirkliche Mehrwerte bieten, indem man die Daten aggregiert, für bestimmte Anwendungsfälle aufwertet und einfach bedienbare und integrierbare Schnittstellen bietet.</p>
                     </div>
-                    <div class="card card-success">
+                    <div class="card card-success fragment">
                         <h3>Kernaussage</h3>
                         <p>"Profitable Geschäftsmodelle auf Daten aufbauen und gleichzeitig IP und Kundendatenschutz schützen durch Nutzung <strong>geschichteter Protokolle</strong>: MCP für Benutzererfahrung, DataSpace/APIs für Governance und aufkommende VC/föderiertes Lernen für Vertrauen."</p>
                     </div>

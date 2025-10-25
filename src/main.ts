@@ -47,6 +47,39 @@ deck.initialize().then(() => {
   // Generate SVG visualizations after initialization
   generateSVGs();
 
+  // Create slide counter element
+  const slideCounter = document.createElement('div');
+  slideCounter.className = 'slide-counter';
+  slideCounter.innerHTML = `
+    <span class="arrow">&lt;</span>
+    <span class="current">01</span>
+    <span class="separator">/</span>
+    <span class="total">06</span>
+    <span class="arrow">&gt;</span>
+  `;
+  document.body.appendChild(slideCounter);
+
+  // Function to update slide counter
+  function updateSlideCounter() {
+    const indices = deck.getIndices();
+    const totalSlides = deck.getTotalSlides();
+    const currentSlide = indices.h + 1; // +1 because indices are 0-based
+
+    const currentSpan = slideCounter.querySelector('.current');
+    const totalSpan = slideCounter.querySelector('.total');
+
+    if (currentSpan && totalSpan) {
+      currentSpan.textContent = String(currentSlide).padStart(2, '0');
+      totalSpan.textContent = String(totalSlides).padStart(2, '0');
+    }
+  }
+
+  // Update counter on slide change
+  deck.on('slidechanged', updateSlideCounter);
+
+  // Initial update
+  updateSlideCounter();
+
   // Language detection and redirection
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const hasLanguagePreference = sessionStorage.getItem('languageSelected');

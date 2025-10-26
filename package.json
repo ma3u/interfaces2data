@@ -29,6 +29,7 @@
   },
   "homepage": "https://ma3u.github.io/interfaces2data/",
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
     "@playwright/test": "^1.49.1",
     "@types/node": "^24.9.1",
     "@types/reveal.js": "^5.2.1",

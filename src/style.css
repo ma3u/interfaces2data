@@ -10,10 +10,10 @@
   --color-accent: #ff6b75;
   --color-success: #4ade80;
 
-  --color-bg: #1a1a1a;
-  --color-surface: #262626;
-  --color-text: #f5f5f5;
-  --color-text-secondary: #d4d4d4;
+  --color-bg: #1a1a1a !important;
+  --color-surface: #262626 !important;
+  --color-text: #f5f5f5 !important;
+  --color-text-secondary: #d4d4d4 !important;
   --color-border: rgba(255, 255, 255, 0.2);
 
   /* Typography */
@@ -35,21 +35,14 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Light mode override (if user prefers light) */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-primary: #32b8c6;
-    --color-primary-dark: #1d7480;
-    --color-secondary: #a84b2f;
-    --color-accent: #c0152f;
-    --color-success: #21804d;
+/* FORCE Dark Mode - Do not allow light mode */
+.reveal {
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
+}
 
-    --color-bg: #fcfcf9;
-    --color-surface: #ffffff;
-    --color-text: #13343b;
-    --color-text-secondary: #626c71;
-    --color-border: rgba(94, 82, 64, 0.2);
-  }
+.reveal .slides {
+  background: transparent !important;
 }
 
 * {
@@ -60,8 +53,8 @@
 
 body {
   font-family: var(--font-sans);
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: #1a1a1a !important;
+  color: #f5f5f5 !important;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -364,7 +357,7 @@ html, body {
 
 /* Custom Slide Styles */
 .slide-content {
-  background: var(--color-surface);
+  background: #262626 !important;
   border-radius: var(--radius);
   padding: 1.5rem;
   box-shadow: var(--shadow-md);

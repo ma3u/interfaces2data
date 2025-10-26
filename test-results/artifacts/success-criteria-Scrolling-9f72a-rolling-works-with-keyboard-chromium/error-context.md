@@ -1,0 +1,169 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "🇬🇧 English" [ref=e3] [cursor=pointer]:
+      - /url: index.html
+      - strong [ref=e4]: 🇬🇧 English
+    - text: "|"
+    - link "🇩🇪 Deutsch" [ref=e5] [cursor=pointer]:
+      - /url: de.html
+  - application [ref=e6]:
+    - generic:
+      - generic:
+        - generic:
+          - heading [level=2]: Three Protocols, Three Philosophies
+          - generic:
+            - img:
+              - generic:
+                - generic: Traditional APIs
+                - generic: Point-to-Point
+              - generic:
+                - generic: DataSpace
+                - generic: Federated
+              - generic:
+                - generic: MCP
+                - generic:
+                  - generic: AI
+                - generic: Natural Language
+          - generic:
+            - generic:
+              - heading [level=3]: Traditional APIs
+              - list:
+                - listitem:
+                  - strong: "Philosophy:"
+                  - text: Point-to-point integration
+                - listitem:
+                  - strong: "Access:"
+                  - text: Developer-controlled
+                - listitem:
+                  - strong: "Best For:"
+                  - text: B2B integrations
+            - generic:
+              - heading [level=3]: DataSpace Protocol
+              - list:
+                - listitem:
+                  - strong: "Philosophy:"
+                  - text: Federated sovereignty
+                - listitem:
+                  - strong: "Access:"
+                  - text: Contract-first
+                - listitem:
+                  - strong: "Best For:"
+                  - text: Inter-organizational exchange
+            - generic:
+              - heading [level=3]: MCP
+              - list:
+                - listitem:
+                  - strong: "Philosophy:"
+                  - text: Natural language
+                - listitem:
+                  - strong: "Access:"
+                  - text: Human → AI → Data
+                - listitem:
+                  - strong: "Best For:"
+                  - text: End-user democratization
+      - generic:
+        - generic:
+          - heading [level=2]: Data Monetization Models & Protocol Fit
+          - table:
+            - rowgroup:
+              - row:
+                - cell: Business Model
+                - cell: Traditional API
+                - cell: DataSpace
+                - cell: MCP
+            - rowgroup:
+              - row:
+                - cell:
+                  - strong: Data-as-a-Service
+                - cell: ✅ Primary
+                - cell: ✅ B2B focus
+                - cell: ⚠️ Limited
+              - row:
+                - cell:
+                  - strong: API Economy
+                - cell: ✅ Direct
+                - cell: ➖ Via connector
+                - cell: ✅ Tool access
+              - row:
+                - cell:
+                  - strong: Data Sharing (B2B)
+                - cell: ⚠️ Complex
+                - cell: ✅✅ Designed for
+                - cell: ➖ Not primary
+              - row:
+                - cell:
+                  - strong: Analytics-as-a-Service
+                - cell: ✅ Yes
+                - cell: ✅ Federated
+                - cell: ✅✅ Natural language
+              - row:
+                - cell:
+                  - strong: Internal Democratization
+                - cell: ⚠️ Technical
+                - cell: ➖ Overkill
+                - cell: ✅✅ Ideal
+          - generic:
+            - strong: "Key Insight:"
+            - text: No single protocol solves all monetization models. Architecture must match business strategy.
+      - generic [ref=e8]:
+        - heading "Intellectual Property Protection Mechanisms" [level=2] [ref=e9]
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - heading "Traditional APIs" [level=3] [ref=e12]
+            - list [ref=e13]:
+              - listitem [ref=e14]: License agreements (per-API contracts)
+              - listitem [ref=e15]: Trade secret protection via closed source
+              - listitem [ref=e16]: Rate limits to control value extraction
+              - listitem [ref=e17]: Terms of Service enforcement
+              - listitem [ref=e18]: Copyright on API structure (disputed in US law)
+              - listitem [ref=e19]:
+                - strong [ref=e20]: "Risk:"
+                - text: Fair use defense, difficult enforcement
+          - generic [ref=e21]:
+            - heading "DataSpace Protocol" [level=3] [ref=e22]
+            - list [ref=e23]:
+              - listitem [ref=e24]: ODRL usage policies (machine-readable contracts)
+              - listitem [ref=e25]: Purpose limitation (data only for agreed use)
+              - listitem [ref=e26]: Deletion policies (time-bound access)
+              - listitem [ref=e27]: Connector-enforced usage control
+              - listitem [ref=e28]: Audit trails for compliance verification
+              - listitem [ref=e29]:
+                - strong [ref=e30]: "Risk:"
+                - text: Requires trust in connector implementation
+      - generic:
+        - generic:
+          - heading [level=2]: "Personal Data Protection: Regulatory Alignment"
+          - generic:
+            - generic:
+              - heading [level=3]: GDPR/Privacy Law Requirements
+              - list:
+                - listitem: Lawful basis for processing
+                - listitem: Purpose limitation
+                - listitem: Data minimization
+                - listitem: Storage limitation
+                - listitem: Consent management
+                - listitem: Right to erasure
+                - listitem: Data breach notification (72hrs)
+                - listitem: Cross-border transfer restrictions
+      - generic:
+        - generic:
+          - heading [level=2]: "Why Protocols Matter: Dynamic Data Access"
+          - generic:
+            - heading [level=3]: The Scenario
+            - paragraph: "\"What's the weather tomorrow in Vienna?\""
+    - text: Speaker notes
+    - generic [ref=e36]: "DataSpace Protocol ODRL usage policies (machine-readable contracts) Purpose limitation (data only for agreed use) Deletion policies (time-bound access) Connector-enforced usage control Audit trails for compliance verification Risk: Requires trust in connector implementation"
+  - generic [ref=e38]:
+    - button "Previous slide" [ref=e39] [cursor=pointer]: <
+    - generic [ref=e40]: "04"
+    - generic [ref=e41]: /
+    - generic [ref=e42]: "12"
+    - button "Next slide" [ref=e43] [cursor=pointer]: ">"
+  - generic:
+    - img
+  - generic:
+    - img
+```

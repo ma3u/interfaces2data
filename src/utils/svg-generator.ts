@@ -4,6 +4,8 @@ export function generateSVGs() {
   generateProtocolComparison();
   generateArchitectureDiagram();
   generateIntegrationFlow();
+  generateMCPArchitectureFlow();
+  generateDataSpaceArchitectureFlow();
 }
 
 // Slide 1: The Data Paradox
@@ -356,6 +358,132 @@ function generateIntegrationFlow() {
         <text x="555" y="320" text-anchor="middle" fill="#626c71" font-size="9">ODRL</text>
         <text x="555" y="340" text-anchor="middle" fill="#626c71" font-size="9">Encryption</text>
         <text x="555" y="360" text-anchor="middle" fill="#626c71" font-size="9">Audit</text>
+      </g>
+    </svg>
+  `;
+
+  container.innerHTML = svg;
+}
+
+// Slide 9: MCP Architecture Flow
+function generateMCPArchitectureFlow() {
+  const container = document.getElementById('mcp-architecture-svg');
+  if (!container) return;
+
+  const svg = `
+    <svg viewBox="0 0 1200 350" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mcp-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#50d4e4;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#32b8c6;stop-opacity:1" />
+        </linearGradient>
+        <filter id="glow-effect">
+          <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+        <marker id="arrow-mcp" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+          <polygon points="0 0, 12 6, 0 12" fill="#50d4e4" />
+        </marker>
+      </defs>
+
+      <!-- User Node -->
+      <g class="mcp-node" style="animation: fadeIn 0.6s ease-out">
+        <circle cx="100" cy="175" r="60" fill="url(#mcp-gradient)" filter="url(#glow-effect)" opacity="0.3"/>
+        <circle cx="100" cy="175" r="45" fill="url(#mcp-gradient)" opacity="0.8"/>
+        <circle cx="100" cy="160" r="15" fill="#1a1a1a"/>
+        <path d="M 100,180 Q 70,210 70,230 L 130,230 Q 130,210 100,180 Z" fill="#1a1a1a"/>
+        <text x="100" y="275" text-anchor="middle" fill="#f5f5f5" font-size="22" font-weight="700">User</text>
+        <text x="100" y="300" text-anchor="middle" fill="#d4d4d4" font-size="14">Natural Language</text>
+      </g>
+
+      <path d="M 170 175 L 270 175" stroke="#50d4e4" stroke-width="4" marker-end="url(#arrow-mcp)" style="animation: drawLine 0.8s ease-out 0.3s both"/>
+      <text x="220" y="165" text-anchor="middle" fill="#50d4e4" font-size="13" font-style="italic">Request</text>
+
+      <g class="mcp-node" style="animation: fadeIn 0.6s ease-out 0.6s both">
+        <rect x="270" y="125" width="180" height="100" rx="15" fill="rgba(80, 212, 228, 0.15)" stroke="#50d4e4" stroke-width="3" filter="url(#glow-effect)"/>
+        <text x="360" y="165" text-anchor="middle" fill="#50d4e4" font-size="20" font-weight="700">MCP Client</text>
+        <text x="360" y="190" text-anchor="middle" fill="#f5f5f5" font-size="16">(LLM Agent)</text>
+      </g>
+
+      <path d="M 460 175 L 560 175" stroke="#50d4e4" stroke-width="4" marker-end="url(#arrow-mcp)" style="animation: drawLine 0.8s ease-out 0.9s both"/>
+      <text x="510" y="165" text-anchor="middle" fill="#50d4e4" font-size="13" font-style="italic">JSON-RPC</text>
+
+      <g class="mcp-node" style="animation: fadeIn 0.6s ease-out 1.2s both">
+        <rect x="560" y="125" width="200" height="100" rx="15" fill="rgba(230, 133, 111, 0.15)" stroke="#e6856f" stroke-width="3" filter="url(#glow-effect)"/>
+        <text x="660" y="165" text-anchor="middle" fill="#e6856f" font-size="20" font-weight="700">MCP Server</text>
+        <text x="660" y="190" text-anchor="middle" fill="#f5f5f5" font-size="16">(Tools)</text>
+      </g>
+
+      <path d="M 770 175 L 870 175" stroke="#50d4e4" stroke-width="4" marker-end="url(#arrow-mcp)" style="animation: drawLine 0.8s ease-out 1.5s both"/>
+      <text x="820" y="165" text-anchor="middle" fill="#50d4e4" font-size="13" font-style="italic">API Call</text>
+
+      <g class="mcp-node" style="animation: fadeIn 0.6s ease-out 1.8s both">
+        <rect x="870" y="125" width="200" height="100" rx="15" fill="rgba(74, 222, 128, 0.15)" stroke="#4ade80" stroke-width="3" filter="url(#glow-effect)"/>
+        <text x="970" y="165" text-anchor="middle" fill="#4ade80" font-size="20" font-weight="700">Backend</text>
+        <text x="970" y="190" text-anchor="middle" fill="#f5f5f5" font-size="16">APIs/Data</text>
+      </g>
+
+      <path d="M 1070 195 Q 1120 220 1120 250 Q 1120 280 970 280 L 100 280"
+            stroke="#4ade80" stroke-width="2" stroke-dasharray="6,6" opacity="0.5"
+            style="animation: drawLine 1s ease-out 2.1s both"/>
+      <text x="600" y="295" text-anchor="middle" fill="#4ade80" font-size="13" font-style="italic">Response</text>
+    </svg>
+  `;
+
+  container.innerHTML = svg;
+}
+
+// Slide 8: DataSpace Architecture Flow
+function generateDataSpaceArchitectureFlow() {
+  const container = document.getElementById('dataspace-architecture-svg');
+  if (!container) return;
+
+  const svg = `
+    <svg viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ds-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#e6856f;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#a84b2f;stop-opacity:1" />
+        </linearGradient>
+        <marker id="arrow-ds" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+          <polygon points="0 0, 12 6, 0 12" fill="#e6856f" />
+        </marker>
+      </defs>
+
+      <g style="animation: fadeIn 0.6s ease-out">
+        <rect x="50" y="100" width="200" height="100" rx="12" fill="rgba(230, 133, 111, 0.15)" stroke="#e6856f" stroke-width="3"/>
+        <text x="150" y="135" text-anchor="middle" fill="#e6856f" font-size="22" font-weight="700">Organization A</text>
+        <text x="150" y="165" text-anchor="middle" fill="#f5f5f5" font-size="16">(Connector)</text>
+      </g>
+
+      <path d="M 260 140 L 360 140" stroke="#e6856f" stroke-width="3" marker-end="url(#arrow-ds)" style="animation: drawLine 0.6s ease-out 0.4s both"/>
+      <path d="M 360 160 L 260 160" stroke="#e6856f" stroke-width="3" marker-end="url(#arrow-ds)" style="animation: drawLine 0.6s ease-out 0.4s both"/>
+
+      <g style="animation: fadeIn 0.6s ease-out 0.7s both">
+        <rect x="360" y="100" width="200" height="100" rx="12" fill="rgba(80, 212, 228, 0.15)" stroke="#50d4e4" stroke-width="3"/>
+        <text x="460" y="135" text-anchor="middle" fill="#50d4e4" font-size="22" font-weight="700">Contract</text>
+        <text x="460" y="165" text-anchor="middle" fill="#f5f5f5" font-size="16">Negotiation</text>
+      </g>
+
+      <path d="M 570 140 L 670 140" stroke="#e6856f" stroke-width="3" marker-end="url(#arrow-ds)" style="animation: drawLine 0.6s ease-out 1s both"/>
+      <path d="M 670 160 L 570 160" stroke="#e6856f" stroke-width="3" marker-end="url(#arrow-ds)" style="animation: drawLine 0.6s ease-out 1s both"/>
+
+      <g style="animation: fadeIn 0.6s ease-out 1.3s both">
+        <rect x="670" y="100" width="200" height="100" rx="12" fill="rgba(230, 133, 111, 0.15)" stroke="#e6856f" stroke-width="3"/>
+        <text x="770" y="135" text-anchor="middle" fill="#e6856f" font-size="22" font-weight="700">Organization B</text>
+        <text x="770" y="165" text-anchor="middle" fill="#f5f5f5" font-size="16">(Connector)</text>
+      </g>
+
+      <path d="M 880 140 L 980 140" stroke="#4ade80" stroke-width="3" marker-end="url(#arrow-ds)" style="animation: drawLine 0.6s ease-out 1.6s both"/>
+      <path d="M 980 160 L 880 160" stroke="#4ade80" stroke-width="3" marker-end="url(#arrow-ds)" style="animation: drawLine 0.6s ease-out 1.6s both"/>
+
+      <g style="animation: fadeIn 0.6s ease-out 1.9s both">
+        <rect x="980" y="100" width="180" height="100" rx="12" fill="rgba(74, 222, 128, 0.15)" stroke="#4ade80" stroke-width="3"/>
+        <text x="1070" y="135" text-anchor="middle" fill="#4ade80" font-size="22" font-weight="700">Data</text>
+        <text x="1070" y="165" text-anchor="middle" fill="#f5f5f5" font-size="16">Transfer</text>
       </g>
     </svg>
   `;

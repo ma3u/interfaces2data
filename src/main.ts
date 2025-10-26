@@ -197,7 +197,8 @@ deck.initialize().then(() => {
   // Initial update
   setTimeout(updateScrollIndicators, 500);
 
-  // Custom keyboard handling for scrolling with up/down arrows
+  // CRITICAL: Override Reveal.js keyboard handling for up/down scrolling
+  // Must be in capture phase with highest priority
   document.addEventListener('keydown', (event) => {
     // Only handle if not in overview mode
     if (deck.isOverview()) return;
@@ -205,33 +206,25 @@ deck.initialize().then(() => {
     const activeSlide = document.querySelector('.reveal .slides section.present') as HTMLElement;
     if (!activeSlide) return;
 
-    // Allow up/down arrows to scroll within the slide
+    // Handle up/down arrows for scrolling
     if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-      const hasScrollableContent = activeSlide.scrollHeight > activeSlide.clientHeight;
+      // ALWAYS prevent Reveal.js from handling these keys
+      event.preventDefault();
+      event.stopImmediatePropagation();
 
-      if (hasScrollableContent) {
-        // Prevent Reveal.js from using these keys for navigation
-        event.preventDefault();
-        event.stopPropagation();
-
-        const scrollAmount = 80;
-        if (event.key === 'ArrowUp') {
-          activeSlide.scrollTo({
-            top: activeSlide.scrollTop - scrollAmount,
-            behavior: 'smooth'
-          });
-        } else {
-          activeSlide.scrollTo({
-            top: activeSlide.scrollTop + scrollAmount,
-            behavior: 'smooth'
-          });
-        }
-
-        // Update scroll indicators after scrolling
-        setTimeout(updateScrollIndicators, 100);
+      const scrollAmount = 100;
+      if (event.key === 'ArrowUp') {
+        activeSlide.scrollTop -= scrollAmount;
+      } else {
+        activeSlide.scrollTop += scrollAmount;
       }
+
+      // Update scroll indicators after scrolling
+      setTimeout(updateScrollIndicators, 50);
+
+      return false;
     }
-  }, true);
+  }, { capture: true, passive: false });
 
   // Language detection and redirection
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';

@@ -49,6 +49,24 @@ const deck = new Reveal({
 deck.initialize().then(() => {
   console.log('Presentation initialized');
 
+  // CRITICAL: Force scrolling on all sections after Reveal.js initialization
+  const forceScrolling = () => {
+    const sections = document.querySelectorAll('.reveal .slides section');
+    sections.forEach(section => {
+      const el = section as HTMLElement;
+      el.style.overflowY = 'auto';
+      el.style.overflowX = 'hidden';
+      el.style.height = '100%';
+      el.style.maxHeight = '100%';
+    });
+  };
+
+  forceScrolling();
+
+  // Re-apply after any Reveal.js updates
+  deck.on('slidechanged', forceScrolling);
+  deck.on('resize', forceScrolling);
+
   // Generate SVG visualizations after initialization
   generateSVGs();
 

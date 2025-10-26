@@ -241,7 +241,7 @@ html, body {
   transform: translateX(-50%);
   width: 50px;
   height: 50px;
-  background: rgba(119, 124, 124, 0.8);
+  background: rgba(80, 212, 228, 0.3);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -250,8 +250,9 @@ html, body {
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 999;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(80, 212, 228, 0.5);
+  border: 2px solid var(--color-primary);
 }
 
 .scroll-indicator.visible {
@@ -345,14 +346,15 @@ html, body {
 .reveal ul,
 .reveal ol {
   margin-left: var(--space-lg);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .reveal li {
-  margin-bottom: 0.75rem;
-  line-height: 1.7;
-  font-size: 1.05rem;
+  margin-bottom: 0.9rem;
+  line-height: 1.8;
+  font-size: 1.15rem;
   color: var(--color-text);
+  font-weight: 400;
 }
 
 .reveal strong {
@@ -376,13 +378,30 @@ html, body {
 
 /* Cards */
 .card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: var(--transition);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card p, .card li {
+  color: var(--color-text);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.card h3, .card h4 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.card strong {
+  color: var(--color-text);
+  font-weight: 700;
 }
 
 .card:hover {
@@ -393,17 +412,17 @@ html, body {
 
 .card-primary {
   border-left: 5px solid var(--color-primary);
-  background: linear-gradient(135deg, rgba(80, 212, 228, 0.15), rgba(80, 212, 228, 0.05));
+  background: linear-gradient(135deg, rgba(80, 212, 228, 0.2), rgba(80, 212, 228, 0.1));
 }
 
 .card-warning {
   border-left: 5px solid var(--color-accent);
-  background: linear-gradient(135deg, rgba(255, 107, 117, 0.15), rgba(255, 107, 117, 0.05));
+  background: linear-gradient(135deg, rgba(255, 107, 117, 0.2), rgba(255, 107, 117, 0.1));
 }
 
 .card-success {
   border-left: 5px solid var(--color-success);
-  background: linear-gradient(135deg, rgba(74, 222, 128, 0.15), rgba(74, 222, 128, 0.05));
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(74, 222, 128, 0.1));
 }
 
 /* Grid Layouts */
@@ -714,20 +733,22 @@ html, body {
 }
 
 .icon-list li {
-  padding-left: 2.5rem;
+  padding-left: 3rem;
   position: relative;
-  margin-bottom: var(--space-md);
-  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.15rem;
   color: var(--color-text);
+  line-height: 1.8;
+  font-weight: 400;
 }
 
 .icon-list li::before {
   content: "✓";
   position: absolute;
   left: 0;
-  top: 0;
-  width: 1.8rem;
-  height: 1.8rem;
+  top: 0.1rem;
+  width: 2rem;
+  height: 2rem;
   background: var(--color-success);
   color: #1a1a1a;
   border-radius: 50%;
@@ -735,15 +756,15 @@ html, body {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(74, 222, 128, 0.4);
+  font-size: 1.1rem;
+  box-shadow: 0 2px 12px rgba(74, 222, 128, 0.6);
 }
 
 .icon-list.warning li::before {
   content: "⚠";
   background: var(--color-accent);
   color: #1a1a1a;
-  box-shadow: 0 2px 8px rgba(255, 107, 117, 0.4);
+  box-shadow: 0 2px 12px rgba(255, 107, 117, 0.6);
 }
 
 /* Responsive Design */

@@ -24,26 +24,28 @@
 
             <!-- Slide 2: Three Protocols -->
             <section>
-                <h2>Three Protocols, Three Philosophies</h2>
-                <div id="protocol-comparison-svg" style="width: 100%; height: 160px; margin: 0.5rem auto; position: relative;"></div>
-                <div style="display: flex; justify-content: space-between; gap: 1.5rem; margin-top: 1rem; width: 100%; max-width: 1400px; margin-left: auto; margin-right: auto; position: relative;">
-                    <div class="fragment" data-fragment-index="0" style="flex: 1; background: rgba(80, 212, 228, 0.15); border: 2px solid #50d4e4; border-radius: 12px; padding: 1.5rem; position: relative !important;">
-                        <h3 style="color: #50d4e4; margin-bottom: 0.8rem; font-size: 1.4rem;">Traditional APIs</h3>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Philosophy:</strong> Point-to-point</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Access:</strong> Developer-controlled</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Best For:</strong> B2B integrations</p>
-                    </div>
-                    <div class="fragment" data-fragment-index="1" style="flex: 1; background: rgba(230, 133, 111, 0.15); border: 2px solid #e6856f; border-radius: 12px; padding: 1.5rem; position: relative !important;">
-                        <h3 style="color: #e6856f; margin-bottom: 0.8rem; font-size: 1.4rem;">DataSpace Protocol</h3>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Philosophy:</strong> Federated sovereignty</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Access:</strong> Contract-first</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Best For:</strong> Inter-organizational exchange</p>
-                    </div>
-                    <div class="fragment" data-fragment-index="2" style="flex: 1; background: rgba(29, 116, 128, 0.25); border: 2px solid #1d7480; border-radius: 12px; padding: 1.5rem; position: relative !important;">
-                        <h3 style="color: #50d4e4; margin-bottom: 0.8rem; font-size: 1.4rem;">Model Context Protocol</h3>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Philosophy:</strong> Natural language</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Access:</strong> Human → AI → Data</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Best For:</strong> End-user democratization</p>
+                <div class="protocol-slide">
+                    <h2>Three Protocols, Three Philosophies</h2>
+                    <div id="protocol-comparison-svg" class="protocol-visual"></div>
+                    <div class="protocol-card-grid">
+                        <div class="protocol-card protocol-card--api fragment" data-fragment-index="0">
+                            <h3>Traditional APIs</h3>
+                            <p><strong>Philosophy:</strong> Point-to-point</p>
+                            <p><strong>Access:</strong> Developer-controlled</p>
+                            <p><strong>Best For:</strong> B2B integrations</p>
+                        </div>
+                        <div class="protocol-card protocol-card--dataspace fragment" data-fragment-index="1">
+                            <h3>DataSpace Protocol</h3>
+                            <p><strong>Philosophy:</strong> Federated sovereignty</p>
+                            <p><strong>Access:</strong> Contract-first</p>
+                            <p><strong>Best For:</strong> Inter-organizational exchange</p>
+                        </div>
+                        <div class="protocol-card protocol-card--mcp fragment" data-fragment-index="2">
+                            <h3>Model Context Protocol</h3>
+                            <p><strong>Philosophy:</strong> Natural language</p>
+                            <p><strong>Access:</strong> Human → AI → Data</p>
+                            <p><strong>Best For:</strong> End-user democratization</p>
+                        </div>
                     </div>
                 </div>
             </section>

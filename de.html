@@ -24,26 +24,28 @@
 
             <!-- Folie 2: Drei Protokolle -->
             <section>
-                <h2>Drei Protokolle, drei Philosophien</h2>
-                <div id="protocol-comparison-svg" style="width: 100%; height: 160px; margin: 0.5rem auto; position: relative;"></div>
-                <div style="display: flex; justify-content: space-between; gap: 1.5rem; margin-top: 1rem; width: 100%; max-width: 1400px; margin-left: auto; margin-right: auto; position: relative;">
-                    <div class="fragment" data-fragment-index="0" style="flex: 1; background: rgba(80, 212, 228, 0.15); border: 2px solid #50d4e4; border-radius: 12px; padding: 1.5rem; position: relative !important;">
-                        <h3 style="color: #50d4e4; margin-bottom: 0.8rem; font-size: 1.4rem;">Traditionelle APIs</h3>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Philosophie:</strong> Punkt-zu-Punkt</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Zugriff:</strong> Entwicklergesteuert</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Am besten für:</strong> B2B-Integrationen</p>
-                    </div>
-                    <div class="fragment" data-fragment-index="1" style="flex: 1; background: rgba(230, 133, 111, 0.15); border: 2px solid #e6856f; border-radius: 12px; padding: 1.5rem; position: relative !important;">
-                        <h3 style="color: #e6856f; margin-bottom: 0.8rem; font-size: 1.4rem;">DataSpace Protocol</h3>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Philosophie:</strong> Föderierte Souveränität</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Zugriff:</strong> Vertragsorientiert</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Am besten für:</strong> Organisationsübergreifender Austausch</p>
-                    </div>
-                    <div class="fragment" data-fragment-index="2" style="flex: 1; background: rgba(29, 116, 128, 0.25); border: 2px solid #1d7480; border-radius: 12px; padding: 1.5rem; position: relative !important;">
-                        <h3 style="color: #50d4e4; margin-bottom: 0.8rem; font-size: 1.4rem;">Model Context Protocol</h3>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Philosophie:</strong> Natürliche Sprache</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Zugriff:</strong> Mensch → KI → Daten</p>
-                        <p style="margin: 0.4rem 0; font-size: 1rem;"><strong>Am besten für:</strong> Endbenutzer-Demokratisierung</p>
+                <div class="protocol-slide">
+                    <h2>Drei Protokolle, drei Philosophien</h2>
+                    <div id="protocol-comparison-svg" class="protocol-visual"></div>
+                    <div class="protocol-card-grid">
+                        <div class="protocol-card protocol-card--api fragment" data-fragment-index="0">
+                            <h3>Traditionelle APIs</h3>
+                            <p><strong>Philosophie:</strong> Punkt-zu-Punkt</p>
+                            <p><strong>Zugriff:</strong> Entwicklergesteuert</p>
+                            <p><strong>Am besten für:</strong> B2B-Integrationen</p>
+                        </div>
+                        <div class="protocol-card protocol-card--dataspace fragment" data-fragment-index="1">
+                            <h3>DataSpace Protocol</h3>
+                            <p><strong>Philosophie:</strong> Föderierte Souveränität</p>
+                            <p><strong>Zugriff:</strong> Vertragsorientiert</p>
+                            <p><strong>Am besten für:</strong> Organisationsübergreifender Austausch</p>
+                        </div>
+                        <div class="protocol-card protocol-card--mcp fragment" data-fragment-index="2">
+                            <h3>Model Context Protocol</h3>
+                            <p><strong>Philosophie:</strong> Natürliche Sprache</p>
+                            <p><strong>Zugriff:</strong> Mensch → KI → Daten</p>
+                            <p><strong>Am besten für:</strong> Endbenutzer-Demokratisierung</p>
+                        </div>
                     </div>
                 </div>
             </section>

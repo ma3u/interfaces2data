@@ -940,3 +940,100 @@ section > div[style*="display:flex"] .fragment {
   left: auto !important;
   transform: none !important;
 }
+
+/* Slide 2 specific layout */
+.protocol-slide {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 0.5rem 0 0;
+  position: relative;
+}
+
+.protocol-slide h2 {
+  margin-bottom: 1.25rem;
+}
+
+.protocol-visual {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 1.5rem auto;
+  position: relative;
+}
+
+.protocol-visual svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.protocol-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+  position: relative;
+}
+
+.protocol-card {
+  border-radius: 14px;
+  padding: 1.5rem;
+  background: rgba(22, 27, 34, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative !important;
+}
+
+.protocol-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: #f5f5f5;
+}
+
+.protocol-card p {
+  font-size: 1.05rem;
+  margin: 0.35rem 0;
+  color: #e2e8f0;
+}
+
+.protocol-card strong {
+  color: #fdfdfd;
+}
+
+.protocol-card--api {
+  border: 2px solid rgba(80, 212, 228, 0.65);
+  background: linear-gradient(140deg, rgba(80, 212, 228, 0.28), rgba(80, 212, 228, 0.08));
+}
+
+.protocol-card--dataspace {
+  border: 2px solid rgba(230, 133, 111, 0.7);
+  background: linear-gradient(140deg, rgba(230, 133, 111, 0.28), rgba(230, 133, 111, 0.08));
+}
+
+.protocol-card--mcp {
+  border: 2px solid rgba(29, 116, 128, 0.7);
+  background: linear-gradient(140deg, rgba(29, 116, 128, 0.28), rgba(29, 116, 128, 0.08));
+}
+
+.protocol-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 900px) {
+  .protocol-slide {
+    width: 96vw;
+  }
+
+  .protocol-card {
+    padding: 1.25rem;
+  }
+
+  .protocol-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .protocol-card p {
+    font-size: 0.98rem;
+  }
+}

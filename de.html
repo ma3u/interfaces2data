@@ -8,55 +8,42 @@
 </head>
 <body>
     <div class="language-switcher">
-        <a href="index.html">🇬🇧 English</a> | <a href="de.html"><strong>🇩🇪 Deutsch</strong></a>
+        <a href="index.html">EN</a> | <a href="de.html"><strong>DE</strong></a>
     </div>
 
     <div class="reveal">
         <div class="slides">
             <!-- Folie 1: Hauptparadoxon -->
-            <section>
-                <div class="slide-content">
-                    <h2>Das Daten-Paradoxon: Monetarisierung vs. Schutz</h2>
-                    <div class="highlight-box">
-                        <h3>"Wie bauen wir profitable Geschäftsmodelle auf Daten auf und schützen gleichzeitig unser geistiges Eigentum UND die persönlichen Daten unserer Kunden?"</h3>
-                    </div>
-                    <div id="paradox-svg" class="svg-container fragment"></div>
-                    <div class="card card-warning fragment">
-                        <strong>Die Herausforderung:</strong> Traditionelle Ansätze lösen EINE Dimension. Die moderne Datenwirtschaft erfordert die gleichzeitige Lösung ALLER DREI.
-                    </div>
+            <section data-background-image="Data.png" data-background-size="cover" data-background-position="center">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 90%; max-width: 1200px; background: rgba(26, 26, 26, 0.85); padding: 3rem; border-radius: 20px; backdrop-filter: blur(10px); border: 3px solid var(--color-primary); box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);">
+                    <h1 style="font-size: 3.5rem; color: var(--color-primary); margin-bottom: 2rem; text-shadow: 0 4px 15px rgba(80, 212, 228, 0.5); line-height: 1.2;">Das Daten-Paradoxon</h1>
+                    <h2 style="font-size: 2.2rem; color: #f5f5f5; margin-bottom: 2rem; font-weight: 600; line-height: 1.4;">Wie monetarisieren wir Daten und schützen gleichzeitig IP und Datenschutz?</h2>
+                    <p style="font-size: 1.6rem; color: #d4d4d4; line-height: 1.6; margin-bottom: 0;"><strong style="color: var(--color-primary);">Hypothese:</strong> Kein einzelnes Protokoll löst Benutzerfreundlichkeit, IP-Schutz und Datenschutz-Compliance – wir brauchen eine mehrschichtige Architektur.</p>
                 </div>
             </section>
 
             <!-- Folie 2: Drei Protokolle -->
             <section>
-                <div class="slide-content">
-                    <h2>Drei Protokolle, drei Philosophien</h2>
-                    <div id="protocol-comparison-svg" class="svg-container"></div>
-                    <div class="grid grid-3">
-                        <div class="card card-primary fragment">
-                            <h3>Traditionelle APIs</h3>
-                            <ul>
-                                <li><strong>Philosophie:</strong> Punkt-zu-Punkt-Integration</li>
-                                <li><strong>Zugriff:</strong> Entwicklergesteuert</li>
-                                <li><strong>Am besten für:</strong> B2B-Integrationen</li>
-                            </ul>
-                        </div>
-                        <div class="card card-primary fragment">
-                            <h3>DataSpace Protocol</h3>
-                            <ul>
-                                <li><strong>Philosophie:</strong> Föderierte Souveränität</li>
-                                <li><strong>Zugriff:</strong> Vertragsorientiert</li>
-                                <li><strong>Am besten für:</strong> Organisationsübergreifender Austausch</li>
-                            </ul>
-                        </div>
-                        <div class="card card-primary fragment">
-                            <h3>MCP</h3>
-                            <ul>
-                                <li><strong>Philosophie:</strong> Natürliche Sprache</li>
-                                <li><strong>Zugriff:</strong> Mensch → KI → Daten</li>
-                                <li><strong>Am besten für:</strong> Endbenutzer-Demokratisierung</li>
-                            </ul>
-                        </div>
+                <h2>Drei Protokolle, drei Philosophien</h2>
+                <div id="protocol-comparison-svg" style="width: 100%; height: 180px; margin: 1rem auto;"></div>
+                <div style="display: flex; justify-content: space-between; gap: 1.5rem; margin-top: 1rem; width: 100%; max-width: 1400px; margin-left: auto; margin-right: auto;">
+                    <div class="fragment" data-fragment-index="0" style="flex: 1; background: rgba(80, 212, 228, 0.15); border: 2px solid #50d4e4; border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: #50d4e4; margin-bottom: 1rem; font-size: 1.5rem;">Traditionelle APIs</h3>
+                        <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Philosophie:</strong> Punkt-zu-Punkt</p>
+                        <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Zugriff:</strong> Entwicklergesteuert</p>
+                        <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Am besten für:</strong> B2B-Integrationen</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="1" style="flex: 1; background: rgba(230, 133, 111, 0.15); border: 2px solid #e6856f; border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: #e6856f; margin-bottom: 1rem; font-size: 1.5rem;">DataSpace Protocol</h3>
+                        <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Philosophie:</strong> Föderierte Souveränität</p>
+                        <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Zugriff:</strong> Vertragsorientiert</p>
+                        <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Am besten für:</strong> Organisationsübergreifender Austausch</p>
+                    </div>
+                    <div class="fragment" data-fragment-index="2" style="flex: 1; background: rgba(29, 116, 128, 0.25); border: 2px solid #1d7480; border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: #50d4e4; margin-bottom: 1rem; font-size: 1.5rem;">Model Context Protocol</h3>
+                        <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Philosophie:</strong> Natürliche Sprache</p>
+                        <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Zugriff:</strong> Mensch → KI → Daten</p>
+                        <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Am besten für:</strong> Endbenutzer-Demokratisierung</p>
                     </div>
                 </div>
             </section>

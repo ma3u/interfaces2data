@@ -31,7 +31,14 @@ const deck = new Reveal({
   showNotes: false,
   autoSlide: 5000,
   autoSlideStoppable: true,
-  autoSlideMethod: Reveal.navigateNext,
+  autoSlideMethod: () => {
+    // Custom method: only advance fragments, never slides
+    const fragments = deck.availableFragments();
+    if (fragments && fragments.next) {
+      deck.nextFragment();
+    }
+    // Do nothing if no more fragments (prevents slide advancement)
+  },
   preloadIframes: null,
   autoAnimate: true,
   autoAnimateMatcher: null,
@@ -121,24 +128,24 @@ deck.initialize().then(() => {
   // Initial update
   updateSlideCounter();
 
-  // Auto-slide control: Advance fragments but NOT slides
+  // Auto-advance fragments only, not slides
   deck.on('slidechanged', () => {
-    // When changing slides, check if new slide has fragments
     const currentSlide = document.querySelector('.reveal .slides section.present');
     if (!currentSlide) return;
 
     const fragments = currentSlide.querySelectorAll('.fragment');
+    const visibleFragments = currentSlide.querySelectorAll('.fragment.visible');
 
-    if (fragments.length > 0) {
-      // Has fragments - enable auto-slide for fragments only
+    if (fragments.length > 0 && visibleFragments.length < fragments.length) {
+      // Has fragments to show - enable auto-slide for fragments
       deck.configure({ autoSlide: 5000 });
     } else {
-      // No fragments - disable auto-slide (stay on slide)
+      // No more fragments - disable auto-slide (don't advance to next slide)
       deck.configure({ autoSlide: 0 });
     }
   });
 
-  // Check after each fragment if all are shown, then pause
+  // After showing a fragment, check if there are more
   deck.on('fragmentshown', () => {
     const currentSlide = document.querySelector('.reveal .slides section.present');
     if (!currentSlide) return;
@@ -146,11 +153,22 @@ deck.initialize().then(() => {
     const fragments = currentSlide.querySelectorAll('.fragment');
     const visibleFragments = currentSlide.querySelectorAll('.fragment.visible');
 
-    // If all fragments are visible, pause auto-slide (don't advance to next slide)
-    if (fragments.length === visibleFragments.length) {
+    if (visibleFragments.length >= fragments.length) {
+      // All fragments shown - disable auto-slide
       deck.configure({ autoSlide: 0 });
-    } else {
-      // Still fragments to show - keep auto-slide active
+    }
+  });
+
+  // When manually navigating back through fragments, re-enable auto-slide if needed
+  deck.on('fragmenthidden', () => {
+    const currentSlide = document.querySelector('.reveal .slides section.present');
+    if (!currentSlide) return;
+
+    const fragments = currentSlide.querySelectorAll('.fragment');
+    const visibleFragments = currentSlide.querySelectorAll('.fragment.visible');
+
+    if (visibleFragments.length < fragments.length) {
+      // Still fragments to show
       deck.configure({ autoSlide: 5000 });
     }
   });
@@ -215,8 +233,8 @@ deck.initialize().then(() => {
   // Initial update
   setTimeout(updateScrollIndicators, 500);
 
-  // CRITICAL: Override Reveal.js keyboard handling for up/down scrolling
-  // Must be in capture phase with highest priority
+  // CRITICAL: Override Reveal.js keyboard handling for up/down scrolling ONLY
+  // Left/Right arrows and Space/Enter are allowed for navigation
   document.addEventListener('keydown', (event) => {
     // Only handle if not in overview mode
     if (deck.isOverview()) return;
@@ -224,9 +242,12 @@ deck.initialize().then(() => {
     const activeSlide = document.querySelector('.reveal .slides section.present') as HTMLElement;
     if (!activeSlide) return;
 
-    // Handle up/down arrows for scrolling
-    if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-      // ALWAYS prevent Reveal.js from handling these keys
+    // Check if slide has scrollable content
+    const hasScrollableContent = activeSlide.scrollHeight > activeSlide.clientHeight;
+
+    // Handle up/down arrows for scrolling ONLY if there's scrollable content
+    if ((event.key === 'ArrowUp' || event.key === 'ArrowDown') && hasScrollableContent) {
+      // Prevent Reveal.js from handling these keys
       event.preventDefault();
       event.stopImmediatePropagation();
 
@@ -242,6 +263,7 @@ deck.initialize().then(() => {
 
       return false;
     }
+    // ArrowLeft, ArrowRight, Space, Enter are NOT intercepted - Reveal.js handles them
   }, { capture: true, passive: false });
 
   // Language detection and redirection

@@ -931,3 +931,12 @@ html, body {
 .grid-3 .card {
   position: relative !important;
 }
+
+/* Force fragments in flexbox layouts to stay relative */
+section > div[style*="display: flex"] .fragment,
+section > div[style*="display:flex"] .fragment {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+}

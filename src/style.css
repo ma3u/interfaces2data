@@ -439,10 +439,22 @@ html, body {
 
 .grid-2 {
   grid-template-columns: repeat(2, 1fr);
+  height: 100%;
 }
 
 .grid-3 {
   grid-template-columns: repeat(3, 1fr);
+}
+
+/* Make cards fill available grid height */
+.grid-2 .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-2 .card ul {
+  flex: 1;
 }
 
 @media (max-width: 768px) {

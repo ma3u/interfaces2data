@@ -436,48 +436,51 @@
             <section>
                 <div class="slide-content">
                     <h2>Die Zukunft: Verifiable Credentials & Neue Standards</h2>
-                    <div style="display: grid; grid-template-columns: 1fr 350px; gap: 1.5rem; margin-bottom: 1.5rem;">
-                        <div class="card card-primary fragment">
-                            <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">🔐 Verifiable Credentials für MCP</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 500px 1fr 1fr; grid-template-rows: auto auto; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <!-- MCP Creds (left) -->
+                        <div class="card card-primary fragment" style="grid-column: 1;">
+                            <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">🔐 Verifiable Credentials</h4>
                             <ul style="font-size: 1.2rem; line-height: 2;">
-                                <li>ToIP/DIF-Arbeitsgruppe (gestartet Sep 2025)</li>
-                                <li>IETF-Entwurf: OAuth DCR + Trusted Issuer Tokens</li>
-                                <li>Kryptografisch nachweisbare Agenten-Identität</li>
-                                <li>Überbrückt MCP ↔ DataSpace-Vertrauensmodelle</li>
+                                <li>ToIP/DIF-Arbeitsgruppe (Sep 2025)</li>
+                                <li>OAuth DCR + Trusted Issuer Tokens</li>
+                                <li>Kryptografisch nachweisbar</li>
+                                <li>Überbrückt MCP ↔ DataSpace</li>
                             </ul>
                         </div>
-                        <div class="svg-container fragment" style="height: auto; padding: 0.5rem;">
+                        <!-- MCP Security (center-left) -->
+                        <div class="card fragment" style="grid-column: 2;">
+                            <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">🛡️ MCP-Sicherheit</h4>
+                            <ul style="font-size: 1.2rem; line-height: 2;">
+                                <li>Cloud Security Alliance</li>
+                                <li>OWASP LLM Top 10</li>
+                                <li>Prompt Injection, Tool-Vergiftung, RCE</li>
+                            </ul>
+                        </div>
+                        <!-- VC Image (center) -->
+                        <div class="svg-container fragment" style="grid-column: 3; grid-row: 1 / 3; height: auto; padding: 1rem;">
                             <img src="/VC.png" alt="Verifiable Credentials Architektur und Ablaufdiagramm" loading="lazy" style="height: 100%; width: 100%; object-fit: contain;" />
                         </div>
+                        <!-- DataSpace (center-right) -->
+                        <div class="card fragment" style="grid-column: 4;">
+                            <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">📋 DataSpace ISO</h4>
+                            <ul style="font-size: 1.2rem; line-height: 2;">
+                                <li>Eclipse/IDSA Standard</li>
+                                <li>Internationale Annahme</li>
+                                <li>Über Europa hinaus</li>
+                            </ul>
+                        </div>
+                        <!-- Natural Language (right) -->
+                        <div class="card fragment" style="grid-column: 5;">
+                            <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">📝 Natürliche Sprache</h4>
+                            <ul style="font-size: 1.2rem; line-height: 2;">
+                                <li>ODRL-Übersetzung</li>
+                                <li>Menschenlesbar</li>
+                                <li>MCP-Schnittstellen</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="grid grid-2 fragment">
-                        <div class="card">
-                            <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">🛡️ MCP-Sicherheits-Standardisierung</h4>
-                            <ul style="font-size: 1.2rem; line-height: 2;">
-                                <li>Cloud Security Alliance: modelcontextprotocol-security.io</li>
-                                <li>OWASP LLM Top 10 Integration</li>
-                                <li>Fokus: Prompt Injection, Tool-Vergiftung, RCE-Prävention</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">📋 DataSpace ISO-Standardisierung</h4>
-                            <ul style="font-size: 1.2rem; line-height: 2;">
-                                <li>Eclipse/IDSA bewegt sich in Richtung internationaler Standard</li>
-                                <li>Breitere Akzeptanz außerhalb Europas</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="grid grid-2 fragment" style="margin-top: 1.5rem;">
-                        <div class="card">
-                            <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">📋 DataSpace ISO-Standardisierung</h4>
-                            <ul style="font-size: 1.2rem; line-height: 2;">
-                                <li>Eclipse/IDSA bewegt sich in Richtung internationaler Standard</li>
-                                <li>Breitere Akzeptanz außerhalb Europas</li>
-                            </ul>
-                        </div>
-                        <div class="card">
-                            <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">📝 Natürlichsprachliche Verträge</h4>
-                            <ul style="font-size: 1.2rem; line-height: 2;">
+                </div>
+            </section>
                                 <li>ODRL → Menschenlesbare Übersetzung</li>
                                 <li>MCP-Schnittstellen für Vertragsverhandlung</li>
                             </ul>

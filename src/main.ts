@@ -2,6 +2,9 @@ import Reveal from 'reveal.js';
 import 'reveal.js/dist/reveal.css';
 import 'reveal.js/dist/theme/black.css';
 import './style.css';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/material.css';
 import { generateSVGs } from './utils/svg-generator';
 
 // Initialize Reveal.js with 16:9 optimization and auto-advance fragments
@@ -265,6 +268,16 @@ deck.initialize().then(() => {
     }
     // ArrowLeft, ArrowRight, Space, Enter are NOT intercepted - Reveal.js handles them
   }, { capture: true, passive: false });
+
+  // Initialize Tippy.js tooltips
+  tippy('[data-tippy-content]', {
+    theme: 'material',
+    animation: 'shift-away-subtle',
+    arrow: true,
+    placement: 'right',
+    maxWidth: 400,
+    allowHTML: true,
+  });
 
   // Language detection and redirection
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';

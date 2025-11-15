@@ -36,9 +36,9 @@
                         </div>
                         <div class="protocol-card protocol-card--dataspace fragment" data-fragment-index="1">
                             <h3>DataSpace Protocol</h3>
-                            <p><strong>Philosophy:</strong> Federated sovereignty</p>
-                            <p><strong>Access:</strong> Contract-first</p>
-                            <p><strong>Best For:</strong> Inter-organizational exchange</p>
+                            <p><strong>Philosophy:</strong> Sovereignty through Decentralization</p>
+                            <p><strong>Access:</strong> Contract-Negotiation first</p>
+                            <p><strong>Best For:</strong> Inter-organizational data exchange</p>
                         </div>
                         <div class="protocol-card protocol-card--mcp fragment" data-fragment-index="2">
                             <h3>Model Context Protocol</h3>
@@ -65,41 +65,31 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong class="business-model-tooltip">Data-as-a-Service
-                                    <span class="tooltip-content">Sell direct access to your data via APIs or data feeds. Customers pay for data access, queries, or downloads.</span>
-                                </strong></td>
+                                <td>
+                                    <span class="business-model" data-tippy-content="Focus: Direct sale of raw or processed data via programmatic interfaces (APIs). The value lies in the data itself.<hr style='margin: 1rem 0; border-color: rgba(255,255,255,0.2);'><strong style='color: var(--color-primary);'>Examples: Nord Data, Stripe, Twilio</strong><br>Monetizing data access directly, either as a data feed or through usage-based API calls.">
+                                        <strong>Direct Data Sales</strong>
+                                    </span>
+                                </td>
                                 <td>✅ Primary</td>
-                                <td>✅ B2B focus</td>
-                                <td>⚠️ Limited</td>
+                                <td>✅ B2B Focus</td>
+                                <td>⚠️ Via Tooling</td>
                             </tr>
-                            <tr>
-                                <td><strong class="business-model-tooltip">API Economy
-                                    <span class="tooltip-content">Monetize through API calls and integrations. Developers build applications using your APIs. Revenue from API usage fees.</span>
-                                </strong></td>
-                                <td>✅ Direct</td>
-                                <td>➖ Via connector</td>
-                                <td>✅ Tool access</td>
-                            </tr>
-                            <tr>
-                                <td><strong class="business-model-tooltip">Data Sharing (B2B)
-                                    <span class="tooltip-content">Controlled data exchange between organizations with contracts and usage policies. Enables collaboration while protecting IP.</span>
-                                </strong></td>
+<tr class="fragment">
+                                <td>
+                                    <span class="business-model" data-tippy-content="Focus: Controlled data exchange in a partner network, often due to regulatory requirements. The value lies in the secure, policy-driven collaboration.<hr style='margin: 1rem 0; border-color: rgba(255,255,255,0.2);'><strong style='color: var(--color-primary);'>Example: Catena-X</strong><br>An automotive data space where partners are required to share supply chain data using the Dataspace model.">
+                                        <strong>Indirect Monetization & Control</strong>
+                                    </span>
+                                </td>
                                 <td>⚠️ Complex</td>
-                                <td>✅✅ Designed for</td>
-                                <td>➖ Not primary</td>
+                                <td>✅✅ Designed For</td>
+                                <td>✅ Natural Language</td>
                             </tr>
-                            <tr>
-                                <td><strong class="business-model-tooltip">Analytics-as-a-Service
-                                    <span class="tooltip-content">Provide insights and analytics derived from your data. Customers query and analyze without accessing raw data.</span>
-                                </strong></td>
-                                <td>✅ Yes</td>
-                                <td>✅ Federated</td>
-                                <td>✅✅ Natural language</td>
-                            </tr>
-                            <tr>
-                                <td><strong class="business-model-tooltip">Internal Democratization
-                                    <span class="tooltip-content">Enable all employees to access and query data easily. Reduces dependency on data teams. Improves decision-making across organization.</span>
-                                </strong></td>
+<tr class="fragment">
+                                <td>
+                                    <span class="business-model" data-tippy-content="Focus: Empowering own employees to use data via self-service. It's about optimizing internal processes, not external sales.<hr style='margin: 1rem 0; border-color: rgba(255,255,255,0.2);'><strong style='color: var(--color-primary);'>Example: DataMesh using Apache Iceberg</strong><br>A decentralized architecture where domains serve their data as products, often using table formats like Iceberg or Delta Lake.">
+                                        <strong>Internal Efficiency & Democratization</strong>
+                                    </span>
+                                </td>
                                 <td>⚠️ Technical</td>
                                 <td>➖ Overkill</td>
                                 <td>✅✅ Ideal</td>
@@ -161,44 +151,79 @@
             <section>
                 <div class="slide-content">
                     <h2>Personal Data Protection: Regulatory Alignment</h2>
-                    <div class="grid grid-2">
-                        <div class="card">
-                            <h3>GDPR/Privacy Law Requirements</h3>
-                            <ul>
-                                <li>Lawful basis for processing</li>
-                                <li>Purpose limitation</li>
-                                <li>Data minimization</li>
-                                <li>Storage limitation</li>
-                                <li>Consent management</li>
-                                <li>Right to erasure</li>
-                                <li>Data breach notification (72hrs)</li>
-                                <li>Cross-border transfer restrictions</li>
-                            </ul>
-                        </div>
-                        <div class="fragment">
-                            <h3>How Protocols Address This</h3>
-                            <div class="card card-primary" style="margin-bottom: 0.5rem;">
-                                <h4>APIs</h4>
-                                <p style="font-size: 0.85rem;">✅ Custom contracts per jurisdiction<br/>
-                                ✅ Developer-controlled data flows<br/>
-                                ⚠️ No standardized consent model<br/>
-                                ⚠️ Privacy by implementation, not design</p>
-                            </div>
-                            <div class="card card-success" style="margin-bottom: 0.5rem;">
-                                <h4>DataSpace</h4>
-                                <p style="font-size: 0.85rem;">✅✅ ODRL policies encode purpose/time limits<br/>
-                                ✅ Technical usage control enforcement<br/>
-                                ✅ Federated identity (data stays local)<br/>
-                                ✅ Audit trails for GDPR compliance</p>
-                            </div>
-                            <div class="card card-warning" style="margin-bottom: 0;">
-                                <h4>MCP</h4>
-                                <p style="font-size: 0.85rem;">✅ Real-time user consent (human-in-loop)<br/>
-                                ✅ OAuth 2.1 with PKCE (secure auth)<br/>
-                                ⚠️ No native data minimization enforcement<br/>
-                                🔄 Verifiable Credentials coming (ToIP/DIF WG)</p>
-                            </div>
-                        </div>
+                    <table style="flex: 1;">
+                        <thead>
+                            <tr>
+                                <th style="width: 35%;">Requirement</th>
+                                <th>APIs</th>
+                                <th>DataSpace</th>
+                                <th>MCP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="fragment">
+                                <td>
+                                    <span class="gdpr" data-tippy-content="GDPR Art. 6(1)(a–f). You must have one lawful basis: consent, contract, legal obligation, vital interests, public task, or legitimate interests. Make basis explicit and document it.">⚖️ Lawful Basis for Processing</span>
+                                </td>
+                                <td>⚠️ Manual (Contracts)</td>
+                                <td>✅✅ ODRL Policies</td>
+                                <td>✅ Per-Use Consent</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>
+                                    <span class="gdpr" data-tippy-content="GDPR Art. 5(1)(b) Purpose Limitation. Collect for specified, explicit, legitimate purposes; no further processing incompatible with those purposes.">🎯 Purpose Limitation</span>
+                                </td>
+                                <td>⚠️ Contractual</td>
+                                <td>✅✅ ODRL Policies</td>
+                                <td>⚠️ Tool-Scoped</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>
+                                    <span class="gdpr" data-tippy-content="GDPR Art. 5(1)(c) Data Minimisation. Personal data must be adequate, relevant and limited to what is necessary for purposes.">🗑️ Data Minimization</span>
+                                </td>
+                                <td>⚠️ Manual (API Design)</td>
+                                <td>✅ Technical (Connector)</td>
+                                <td>⚠️ Manual (Tool Logic)</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>
+                                    <span class="gdpr" data-tippy-content="GDPR Art. 5(1)(e) Storage Limitation. Keep data in identifiable form no longer than necessary; define and enforce retention periods.">⏱️ Storage Limitation</span>
+                                </td>
+                                <td>⚠️ Manual</td>
+                                <td>✅ Technical (ODRL)</td>
+                                <td>⚠️ Manual</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>
+                                    <span class="gdpr" data-tippy-content="GDPR Art. 7 (Consent). Consent must be freely given, specific, informed, unambiguous and as easy to withdraw as to give; record consent and purpose.">🤝 Consent Management</span>
+                                </td>
+                                <td>⚠️ No Standard</td>
+                                <td>✅ Technical (DCP)</td>
+                                <td>✅✅ Real-time Prompt</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>
+                                    <span class="gdpr" data-tippy-content="GDPR Art. 17 (Right to Erasure). Individuals can request deletion when data is no longer necessary, consent withdrawn, objection upheld, or processing unlawful.">❌ Right to Erasure</span>
+                                </td>
+                                <td>⚠️ Manual</td>
+                                <td>✅ Technical (ODRL)</td>
+                                <td>⚠️ Manual</td>
+                            </tr>
+                            <tr class="fragment">
+                                <td>
+                                    <span class="gdpr" data-tippy-content="GDPR Chapter V (Arts. 44–49). Transfers outside EEA require adequacy decision, SCCs, BCRs, or derogations; conduct Transfer Impact Assessments.">🌍 Cross-Border Transfers</span>
+                                </td>
+                                <td>⚠️ Manual (Jurisdiction)</td>
+                                <td>✅ Technical (ODRL)</td>
+                                <td>⚠️ Manual</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="card-group fragment" style="display: flex; justify-content: space-around; margin-top: 1.5rem; font-size: 0.95rem; text-align: center;">
+                        <span>✅✅ = By Design</span>
+                        <span>✅ = Supported</span>
+                        <span>⚠️ = Manual / Workaround</span>
+                        <span>❌ = Not Supported</span>
                     </div>
                 </div>
             </section>
@@ -207,36 +232,34 @@
             <section>
                 <div class="slide-content">
                     <h2>Why Protocols Matter: Dynamic Data Access</h2>
-                    <div class="card card-primary" style="margin-bottom: 1rem;">
-                        <h3>The Scenario</h3>
-                        <p style="font-style: italic;">"What's the weather tomorrow in Vienna?"</p>
-                    </div>
-                    <div class="grid grid-3 fragment">
-                        <div class="card card-warning">
-                            <h4>❌ Without Protocols</h4>
-                            <p><strong>LLM:</strong> "I cannot provide current weather (training cutoff limitation)"</p>
-                            <p><strong>Result:</strong> No business value, frustrated user</p>
+                    <div style="display: grid; grid-template-columns: 45% 1fr; gap: 1.5rem; align-items: start; margin-top: 1.5rem;">
+                        <div>
+                            <img src="/claude-weatherMCP.png" alt="Claude Desktop weather forecast example showing natural language query and real-time response" loading="lazy" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 20px rgba(80, 212, 228, 0.3);" />
                         </div>
-                        <div class="card">
-                            <h4>⚠️ Traditional Weather API</h4>
-                            <p>✅ Developer integrates API manually<br/>
-                            ⚠️ Requires coding, API key management<br/>
-                            ⚠️ <strong>IP:</strong> Enforced via API terms, rate limits<br/>
-                            ⚠️ <strong>Privacy:</strong> Location tracking concerns</p>
-                            <p><strong>Result:</strong> Works for developers, not end users</p>
+                        <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                            <div class="card card-primary" style="margin: 0; padding: 1.2rem;">
+                                <h3 style="margin: 0 0 0.6rem 0; font-size: 1.5rem;">The Scenario</h3>
+                                <p style="font-style: italic; font-size: 1.3rem; margin: 0;">"What's the weather tomorrow in Vienna?"</p>
+                            </div>
+                            <div class="card card-warning fragment" style="margin: 0; padding: 1.2rem;">
+                                <h4 style="margin-top: 0; font-size: 1.3rem;">❌ Without Protocols</h4>
+                                <p style="font-size: 1.15rem; margin: 0;"><strong>LLM:</strong> "I cannot provide current weather (training cutoff limitation)"</p>
+                            </div>
+                            <div class="card fragment" style="margin: 0; padding: 1.2rem;">
+                                <h4 style="margin-top: 0; font-size: 1.3rem;">⚠️ Traditional Weather API</h4>
+                                <p style="font-size: 1.15rem; margin: 0;">✅ Developer integrates API manually<br/>
+                                ⚠️ Requires coding, API key management</p>
+                            </div>
+                            <div class="card card-success fragment" style="margin: 0; padding: 1.2rem;">
+                                <h4 style="margin-top: 0; font-size: 1.3rem;">✅ MCP + Weather Tool</h4>
+                                <p style="font-size: 1.15rem; margin: 0;">✅ User: Natural language request<br/>
+                                ✅ Response: Real-time data<br/>
+                                ✅ No coding needed</p>
+                            </div>
+                            <div class="card card-primary fragment" style="margin: 0; padding: 1.2rem;">
+                                <p style="font-size: 1.15rem; margin: 0;"><strong>Lesson:</strong> MCP is the interface layer; APIs/DataSpace are the infrastructure layer.</p>
+                            </div>
                         </div>
-                        <div class="card card-success">
-                            <h4>✅ MCP + Weather Tool</h4>
-                            <p>✅ User: Natural language request<br/>
-                            ✅ MCP Server: Calls weather API<br/>
-                            ✅ Response: "Vienna (Oct 26): 12°C, patchy rain, 22%"<br/>
-                            ⚠️ <strong>IP:</strong> Weather provider's API terms apply<br/>
-                            ⚠️ <strong>Privacy:</strong> Location data shared with consent</p>
-                            <p><strong>Result:</strong> Democratized access</p>
-                        </div>
-                    </div>
-                    <div class="card card-success fragment">
-                        <strong>Lesson:</strong> MCP is the interface layer; APIs/DataSpace are the infrastructure layer.
                     </div>
                 </div>
             </section>

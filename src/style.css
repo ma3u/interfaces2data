@@ -361,7 +361,8 @@ html, body {
   border-radius: var(--radius);
   padding: 1.5rem;
   box-shadow: var(--shadow-md);
-  border: 1px solid var(--color-border);
+  outline: 1px solid var(--color-border);
+  outline-offset: -1px;
   width: 100%;
   max-height: 95%;
   display: flex;

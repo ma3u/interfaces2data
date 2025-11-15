@@ -360,9 +360,7 @@ html, body {
   background: #262626 !important;
   border-radius: var(--radius);
   padding: 1.5rem;
-  box-shadow: var(--shadow-md);
-  outline: 1px solid var(--color-border);
-  outline-offset: -1px;
+  box-shadow: var(--shadow-md), inset 0 0 0 1px var(--color-border);
   width: 100%;
   max-height: 95%;
   display: flex;

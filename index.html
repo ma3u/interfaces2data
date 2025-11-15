@@ -436,7 +436,8 @@
             <section>
                 <div class="slide-content">
                     <h2>The Future: Verifiable Credentials & Emerging Standards</h2>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto; gap: 1.5rem;">
+                    <!-- Top Row: 3 columns -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
                         <!-- Verifiable Credentials (top-left) -->
                         <div class="card card-primary fragment">
                             <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">🔐 Verifiable Credentials for MCP</h4>
@@ -447,8 +448,8 @@
                                 <li>Bridges MCP ↔ DataSpace trust models</li>
                             </ul>
                         </div>
-                        <!-- VC Image (center, only first row) -->
-                        <div style="display: flex; align-items: stretch; justify-content: center; grid-column: 2; grid-row: 1;" class="fragment">
+                        <!-- VC Image (center) -->
+                        <div style="display: flex; align-items: stretch; justify-content: center;" class="fragment">
                             <img src="/VC.png" alt="Verifiable Credentials architecture and flow diagram" loading="lazy" style="height: 100%; width: 100%; object-fit: contain;" />
                         </div>
                         <!-- MCP Security (top-right) -->
@@ -460,6 +461,9 @@
                                 <li>Focus: Prompt injection, tool poisoning, RCE prevention</li>
                             </ul>
                         </div>
+                    </div>
+                    <!-- Bottom Row: 2 columns -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                         <!-- DataSpace ISO/IEC (bottom-left) -->
                         <div class="card fragment">
                             <h4 style="font-size: 1.4rem; margin-bottom: 1.2rem;">📋 DataSpace ISO/IEC Standard</h4>

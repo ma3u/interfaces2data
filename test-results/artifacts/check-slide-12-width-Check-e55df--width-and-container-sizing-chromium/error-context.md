@@ -1,0 +1,118 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "EN" [ref=e3] [cursor=pointer]:
+      - /url: index.html
+      - strong [ref=e4]: EN
+    - text: "|"
+    - link "DE" [ref=e5] [cursor=pointer]:
+      - /url: de.html
+  - application [ref=e6]:
+    - generic:
+      - generic:
+        - generic:
+          - heading [level=2]: "Integration Strategy: Layered Architecture"
+          - generic:
+            - img:
+              - generic:
+                - generic: End User (Natural Language)
+              - generic:
+                - generic: MCP Client (AI Agent)
+              - generic:
+                - generic:
+                  - generic: DataSpace
+                  - generic: Traditional APIs
+                  - generic: Data Sources
+              - generic:
+                - generic: Protected Data (IP + Privacy Controls)
+              - generic: UX
+              - generic: Interface
+              - generic: Backend
+              - generic: Storage
+          - generic:
+            - generic:
+              - heading [level=3]: Benefits
+              - list:
+                - listitem: ✓ Natural language UX + Strong governance
+                - listitem: ✓ Democratized access to compliant data spaces
+                - listitem: ✓ User-friendly contract exploration
+            - generic:
+              - heading [level=3]: Challenges
+              - list:
+                - listitem: ⚠ Authentication bridge (OAuth 2.1 ↔ DCP)
+                - listitem: ⚠ Policy translation complexity
+                - listitem: ⚠ Different trust models
+      - generic:
+        - generic:
+          - heading [level=2]: "The Future: Verifiable Credentials & Emerging Standards"
+          - generic:
+            - generic:
+              - heading [level=4]: 🔐 Verifiable Credentials for MCP
+              - list:
+                - listitem: ToIP/DIF working group (Sep 2025)
+                - listitem: OAuth DCR + Trusted Issuer Tokens
+                - listitem: Cryptographically provable identity
+                - listitem: Bridges MCP ↔ DataSpace trust models
+            - generic:
+              - img
+            - generic:
+              - heading [level=4]: 🛡️ MCP Security Standardization
+              - list:
+                - listitem: Cloud Security Alliance
+                - listitem: OWASP LLM Top 10 integration
+                - listitem: "Focus: Prompt injection, tool poisoning, RCE prevention"
+          - generic:
+            - generic:
+              - heading [level=4]: 📋 DataSpace ISO/IEC Standard
+              - list:
+                - listitem: Eclipse/IDSA moving toward international standard
+                - listitem: Broader adoption beyond Europe
+                - listitem: Standardization at ISO level
+            - generic:
+              - heading [level=4]: 📝 Natural Language Contracts
+              - list:
+                - listitem: ODRL → Human-readable translation
+                - listitem: MCP interfaces for contract negotiation
+                - listitem: Bridging technical and legal
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - heading "My Personal Recommendations" [level=2] [ref=e10]
+          - generic [ref=e11]:
+            - generic [ref=e12]:
+              - heading "Practical Playbook" [level=3] [ref=e13]
+              - list [ref=e14]:
+                - listitem [ref=e15]:
+                  - strong [ref=e16]: Anchor on one high-value use case
+                  - text: "Example: Energy trading on DataSpace with natural language queries via MCP"
+                - listitem [ref=e17]:
+                  - strong [ref=e18]: Deliver ready-to-use services
+                  - text: "Example: Pre-built dashboards, alerts, connectors → no raw data dumps"
+                - listitem [ref=e19]:
+                  - strong [ref=e20]: Automate compliance
+                  - text: "Example: Policy + consent enforcement built into workflow"
+            - generic [ref=e21]:
+              - generic [ref=e22]:
+                - heading "💡 Data as Integration" [level=3] [ref=e23]
+                - paragraph [ref=e24]: Data is valuable only when embedded in usable services, not as raw exports.
+              - generic [ref=e25]:
+                - heading "💡 Protocol Fit" [level=3] [ref=e26]
+                - paragraph [ref=e27]: Pick the right protocol for your business model—DataSpace, MCP, or APIs.
+              - generic [ref=e28]:
+                - heading "💡 Compliance First" [level=3] [ref=e29]
+                - paragraph [ref=e30]: Build privacy, consent, and regulation enforcement into your core workflow.
+        - img "Contact Matthias Buchhorn" [ref=e32]
+    - text: Speaker notes
+    - generic [ref=e38]: "My Personal Recommendations Practical Playbook Anchor on one high-value use case Example: Energy trading on DataSpace with natural language queries via MCP Deliver ready-to-use services Example: Pre-built dashboards, alerts, connectors → no raw data dumps Automate compliance Example: Policy + consent enforcement built into workflow 💡 Data as Integration Data is valuable only when embedded in usable services, not as raw exports. 💡 Protocol Fit Pick the right protocol for your business model—DataSpace, MCP, or APIs. 💡 Compliance First Build privacy, consent, and regulation enforcement into your core workflow."
+  - generic [ref=e40]:
+    - button "Previous slide" [ref=e41] [cursor=pointer]: <
+    - generic [ref=e42]: "12"
+    - generic [ref=e43]: /
+    - generic [ref=e44]: "12"
+    - button "Next slide" [disabled] [ref=e45]: ">"
+  - generic:
+    - img
+  - generic:
+    - img
+```

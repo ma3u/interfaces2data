@@ -914,6 +914,15 @@ html, body {
   }
 }
 
+/* Slide 12 Contact Image Container */
+.slide-content[style*="grid-template-rows: 1fr auto"] > div[style*="overflow-y: auto"] {
+  padding-bottom: 0 !important;
+}
+
+.slide-content[style*="grid-template-rows: 1fr auto"] > div[style*="width: 100%"] img {
+  max-width: 100%;
+}
+
 /* Fix fragment positioning - prevent absolute positioning on grid items */
 .grid .fragment {
   position: relative !important;
